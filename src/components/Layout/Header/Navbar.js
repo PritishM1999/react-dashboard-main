@@ -29,9 +29,10 @@ const Navbar = () => {
           data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown"
           aria-expanded="false"
+          align-item="center"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"><ExpandCircleDownOutlinedIcon /></span>
+          <span className="navbar-toggler-icon "><ExpandCircleDownOutlinedIcon /></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ml-auto align-items-center">
@@ -169,7 +170,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-    </nav>
+    </nav >
   );
 };
 

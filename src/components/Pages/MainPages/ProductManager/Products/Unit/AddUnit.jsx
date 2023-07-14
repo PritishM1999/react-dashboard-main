@@ -23,11 +23,11 @@ const AddUnit = () => {
 
   return (
     <>
-      <div className="card">
+      <div className="card-flow">
         <div className="card-header">
           <h3 className="card-title">Add Units</h3>
         </div>
-        <div className="Add-Brand-container">
+        <div className="add-Brand-container">
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <div className="input-field">

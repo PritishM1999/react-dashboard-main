@@ -21,7 +21,7 @@ const AddSuppliers = () => {
 
   return (
     <>
-      <div className="card">
+      <div className="card-flow">
         <div className="card-header">
           <h3 className="card-title">Add Supplier</h3>
         </div>
@@ -97,6 +97,7 @@ const AddSuppliers = () => {
             Save
           </Button>
         </Grid>
+        <br />
       </div>
     </>
   );

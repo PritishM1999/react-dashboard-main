@@ -196,12 +196,6 @@
   justify-content: flex-start;
 }
 
-@media only screen and (max-width: 1200px) {
-}
-
-@media only screen and (max-width: 1024px) {
-}
-
 @media only screen and (max-width: 768px) {
   .navbar-toggler {
     margin-left: 90%;
@@ -233,6 +227,10 @@
   }
 }
 
+.navbar-toggler-icon {
+  padding-top: 13px;
+}
+
 @media only screen and (max-width: 500px) {
   .navbar-toggler {
     margin-left: 85%;
@@ -258,7 +256,7 @@
   }
 
   .navbar-nav {
-    margin: 1rem -1.4rem 0 0rem;
+    margin: 1.4rem -1.4rem 0 0rem;
   }
 
   #settings-dropdown {

@@ -43,3 +43,7 @@
   width: 90vw;
   overflow: auto;
 }
+
+.add-edit-stocks-button button {
+  background-color: #7356b2;
+}

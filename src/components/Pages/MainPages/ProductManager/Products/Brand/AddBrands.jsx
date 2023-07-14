@@ -10,11 +10,11 @@ const AddBrand = () => {
 
   return (
     <>
-      <div className="card">
+      <div className="card-flow">
         <div className="card-header">
-          <h3 className="card-title">Brand Information</h3>
+          <h3 className="card-title">Add Brand </h3>
         </div>
-        <div className="Add-Brand-container">
+        <div className="add-Brand-container">
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               {/* Title */}
@@ -82,27 +82,27 @@ const AddBrand = () => {
               </div>
             </Grid>
           </Grid>
+          <br />
+          <div>
+            <Grid
+              item
+              xs={12}
+              style={{
+                display: "flex",
+                justifyContent: "right",
+              }}
+            >
+              {/* Submit button */}
+              <Button
+                className="save-btn"
+                variant="contained"
+                style={{ background: "#7356b2" }}
+              >
+                Save
+              </Button>
+            </Grid>
+          </div>
         </div>
-      </div>
-      <br />
-      <div>
-        <Grid
-          item
-          xs={12}
-          style={{
-            display: "flex",
-            justifyContent: "right",
-          }}
-        >
-          {/* Submit button */}
-          <Button
-            className="save-btn"
-            variant="contained"
-            style={{ background: "#7356b2" }}
-          >
-            Save
-          </Button>
-        </Grid>
       </div>
     </>
   );

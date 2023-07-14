@@ -13,17 +13,39 @@ import {
   Switch,
   Typography,
   FormControl,
+  Modal,
+  ButtonGroup,
+  IconButton,
 } from "@mui/material";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { styled } from "@mui/material/styles";
 import "./AddProducts.css";
 
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import AddBrand from "../Brand/AddBrands";
+import AddSuppliers from "../Supplier/AddSuppliers";
+import AddCategories from "../Categories/AddCategories";
+import AddUnit from "../Unit/AddUnit";
+import AddManufacturer from "../Manufacturer/Manufacturer";
+
 const AddProducts = () => {
   const [brandValue, setBrandValue] = useState("");
   const [supplierValue, setSupplierValue] = useState("");
   const [categoryValue, setCategoryValue] = useState("");
   const [subcategoryValue, setSubcategoryValue] = useState("");
+  const [manufacturerValue, setManufacturerValue] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
+  const openModal = (content) => {
+    setModalContent(content);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   const handleEditorChange = (event, editor) => {
     const data = editor.getData();
@@ -150,6 +172,13 @@ const AddProducts = () => {
     // Add more options as needed
   ];
 
+  const manufacturerOptions = [
+    { value: "manufacturer1", label: "Manufacturer 1" },
+    { value: "manufacturer2", label: "Manufacturer 2" },
+    { value: "manufacturer3", label: "Manufacturer 3" },
+    // Add more options as needed
+  ];
+
   const subcategoryOptions = [
     { value: "subcategory1", label: "Subcategory 1" },
     { value: "subcategory2", label: "Subcategory 2" },
@@ -177,38 +206,96 @@ const AddProducts = () => {
           </div>
           <div className="filter-container">
             <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={4}>
                 <InputLabel>Brand :</InputLabel>
-                <FormControl fullWidth>
-                  <Autocomplete
-                    options={brandOptions}
-                    value={brandValue}
-                    onChange={(event, newValue) => setBrandValue(newValue)}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
-                </FormControl>
+                <div className="add-pop-flex">
+                  <FormControl fullWidth>
+                    <Autocomplete
+                      options={brandOptions}
+                      value={brandValue}
+                      onChange={(event, newValue) => setBrandValue(newValue)}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </FormControl>
+                  <ButtonGroup
+                    disableElevation
+                    variant="contained"
+                    aria-label="Disabled elevation buttons"
+                    onClick={() => openModal(<AddBrand />)}
+                    className="plus-buttons-add-pro"
+                  >
+                    <Button className="plus-btn-pro">+</Button>
+                  </ButtonGroup>
+                </div>
               </Grid>
-              <Grid item xs={12} md={6}>
+
+              <Grid item xs={12} md={4}>
                 <InputLabel>Supplier :</InputLabel>
-                <FormControl fullWidth>
-                  <Autocomplete
-                    options={supplierOptions}
-                    value={supplierValue}
-                    onChange={(event, newValue) => setSupplierValue(newValue)}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
-                </FormControl>
+                <div className="add-pop-flex">
+                  <FormControl fullWidth>
+                    <Autocomplete
+                      options={supplierOptions}
+                      value={supplierValue}
+                      onChange={(event, newValue) => setSupplierValue(newValue)}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </FormControl>
+                  <ButtonGroup
+                    disableElevation
+                    variant="contained"
+                    aria-label="Disabled elevation buttons"
+                    onClick={() => openModal(<AddSuppliers />)}
+                    className="plus-buttons-add-pro"
+                  >
+                    <Button className="plus-btn-pro">+</Button>
+                  </ButtonGroup>
+                </div>
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <InputLabel>Manufacturer :</InputLabel>
+                <div className="add-pop-flex">
+                  <FormControl fullWidth>
+                    <Autocomplete
+                      options={manufacturerOptions}
+                      value={manufacturerValue}
+                      onChange={(event, newValue) =>
+                        setManufacturerValue(newValue)
+                      }
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </FormControl>
+                  <ButtonGroup
+                    disableElevation
+                    variant="contained"
+                    aria-label="Disabled elevation buttons"
+                    onClick={() => openModal(<AddManufacturer />)}
+                    className="plus-buttons-add-pro"
+                  >
+                    <Button className="plus-btn-pro">+</Button>
+                  </ButtonGroup>
+                </div>
               </Grid>
               <Grid item xs={12} md={6}>
                 <InputLabel>Category :</InputLabel>
-                <FormControl fullWidth>
-                  <Autocomplete
-                    options={categoryOptions}
-                    value={categoryValue}
-                    onChange={(event, newValue) => setCategoryValue(newValue)}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
-                </FormControl>
+                <div className="add-pop-flex">
+                  <FormControl fullWidth>
+                    <Autocomplete
+                      options={categoryOptions}
+                      value={categoryValue}
+                      onChange={(event, newValue) => setCategoryValue(newValue)}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </FormControl>
+                  <ButtonGroup
+                    disableElevation
+                    variant="contained"
+                    aria-label="Disabled elevation buttons"
+                    onClick={() => openModal(<AddCategories />)}
+                    className="plus-buttons-add-pro"
+                  >
+                    <Button className="plus-btn-pro">+</Button>
+                  </ButtonGroup>
+                </div>
               </Grid>
               <Grid item xs={12} md={6}>
                 <InputLabel>Subcategory :</InputLabel>
@@ -257,6 +344,26 @@ const AddProducts = () => {
             </Grid>
           </div>
         </section>
+        {/* Modal */}
+        <Modal
+          open={modalOpen}
+          onClose={closeModal}
+          style={{ height: "auto", width: "auto" }}
+        >
+          <div className="modal-wrapper">
+            <div className="modal-content">
+              <div className="close-button-modal">
+                <h1 className="card-title">
+                  {modalContent && modalContent.props.title}
+                </h1>
+                <IconButton onClick={closeModal}>
+                  <CloseOutlinedIcon />
+                </IconButton>
+              </div>
+              {modalContent}
+            </div>
+          </div>
+        </Modal>
         <br />
 
         <section className="card">
@@ -270,21 +377,32 @@ const AddProducts = () => {
               <Grid container spacing={4}>
                 <Grid item xs={12} md={3}>
                   <InputLabel>Unit :</InputLabel>
-                  <FormControl fullWidth>
-                    <InputLabel htmlFor="shipping">Select unit</InputLabel>
-                    <Select
-                      id="shipping"
-                      name="shipping"
-                      value={brandValue}
-                      onChange={(e) => setBrandValue(e.target.value)}
+                  <div className="add-pop-flex">
+                    <FormControl fullWidth>
+                      <InputLabel htmlFor="shipping">Select unit</InputLabel>
+                      <Select
+                        id="shipping"
+                        name="shipping"
+                        value={brandValue}
+                        onChange={(e) => setBrandValue(e.target.value)}
+                      >
+                        {shippingOptions.map((option) => (
+                          <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                          </MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
+                    <ButtonGroup
+                      disableElevation
+                      variant="contained"
+                      aria-label="Disabled elevation buttons"
+                      onClick={() => openModal(<AddUnit />)}
+                      className="plus-buttons-add-pro"
                     >
-                      {shippingOptions.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                          {option.label}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
+                      <Button className="plus-btn-pro">+</Button>
+                    </ButtonGroup>
+                  </div>
                 </Grid>
                 <Grid item xs={12} md={3}>
                   <InputLabel htmlFor="">Weight :</InputLabel>
@@ -516,6 +634,19 @@ const AddProducts = () => {
               </div>
             </div>
 
+            <div className="inp-seo-meta3">
+              {/* Meta Title */}
+              <div className="input-field">
+                <InputLabel>Header :</InputLabel>
+                <TextField placeholder="Meta Header" />
+              </div>
+
+              {/* Meta Keywords */}
+              <div className="input-field">
+                <InputLabel>Footer :</InputLabel>
+                <TextField placeholder="Meta Footer" />
+              </div>
+            </div>
             {/* Description */}
 
             {/* Meta Description */}

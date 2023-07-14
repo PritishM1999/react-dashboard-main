@@ -30,7 +30,7 @@ const AddCategories = () => {
 
   return (
     <>
-      <div className="card">
+      <div className="card-flow">
         <div className="card-header">
           <h3 className="card-title">Add Categories</h3>
         </div>
@@ -177,6 +177,7 @@ const AddCategories = () => {
             Save
           </Button>
         </Grid>
+        <br />
       </div>
     </>
   );
