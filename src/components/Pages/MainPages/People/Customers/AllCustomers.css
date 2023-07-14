@@ -1,0 +1,32 @@
+.download-sample {
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.download-sample span {
+  color: #6299c8;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.adjust-button {
+  margin-top: 0.5rem;
+}
+
+.adjust-button button {
+  background-color: #7356b2;
+}
+
+.import-btn,
+.search-btn {
+  width: 100%;
+  max-width: 100px;
+  color: #ffffff;
+}
+
+/* @media (min-width: 600px) {
+  .save-btn {
+    width: auto;
+  }
+} */

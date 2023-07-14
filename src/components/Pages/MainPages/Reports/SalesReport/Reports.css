@@ -1,0 +1,44 @@
+.allsales-search-button,
+.allsales-remove-button,
+allsales-addmore-button {
+  display: flex;
+  position: relative;
+  padding-top: 2.5rem;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.allsales-search-button button {
+  background-color: #7356b2;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.allsales-search-button2 button {
+  background-color: #7356b2;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.test-orange {
+  background-color: orange;
+  color: #ffffff;
+  padding: 4px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.allsales-remove-button button {
+  background-color: #ff455e;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.allsales-addmore-button button {
+  background-color: #6b6f82;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+/* .allsales-remove-button,
+.allsales-addmore-button  */

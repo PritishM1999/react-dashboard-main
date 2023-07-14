@@ -1,0 +1,92 @@
+
+
+.search-invoice .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 0px 4px;
+}
+
+.search-invoice .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  margin-right: 0rem;
+}
+
+.search-invoice .css-1uvydh2{
+  padding: 6px;
+}
+
+.searchAndNosInvoice {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgb(201, 198, 198);
+  padding: 1rem;
+}
+
+.pagination-style-invoice {
+  border-top: 0.5px solid rgb(201, 198, 198);
+}
+
+.inv-nos {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 0px;
+  /* margin-bottom: 20px; */
+  width: 4.5rem;
+  height: 2rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .searchAndNosInvoice {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-in-table-blogs {
+    margin-bottom: 2rem;
+  }
+
+  .search-in-table-blogs :first-child {
+    padding: 10px;
+  }
+
+  .tabs-butons button {
+    line-height: 18px;
+  }
+
+  .tabs-butons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .searchAndNosInvoice {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-in-table-blogs {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .searchAndNosInvoice {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-in-table-blogs {
+    margin-bottom: 2rem;
+  }
+}

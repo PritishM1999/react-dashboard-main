@@ -1,0 +1,224 @@
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  display: none;
+}
+
+.orders-section .css-j204z7-MuiFormControlLabel-root {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.order TableCell {
+  align-items: center;
+}
+
+.css-1ex1afd-MuiTableCell-root {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: gray;
+}
+
+/* All orders copy */
+
+.filter-section,
+.orders-section {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: visible; /* Set overflow to visible */
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  align-content: stretch;
+  gap: 1rem;
+}
+
+.order-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.filter-head,
+.order-head {
+  border-bottom: 1px solid rgb(201, 201, 201);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.filter-head h1,
+.order-head h1 {
+  margin-bottom: auto;
+  margin-top: auto;
+  font-size: 18px;
+  color: #333;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.filter-section .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+  padding-left: 1rem;
+  /* height: 110px; */
+}
+
+.filter-section .css-mhc70k-MuiGrid-root {
+  margin-top: 0px;
+}
+
+.date-picker > .rdrMonthAndYearWrapper {
+  align-items: center;
+  height: 60px;
+  padding-top: 0px;
+}
+
+.date-picker .rdrCalendarWrapper {
+  color: #000000;
+  font-size: 12px;
+  background-color: #ffffff;
+  position: relative;
+
+  box-shadow: 0px 2px 2px #454545;
+  border-radius: 5px;
+}
+
+.date-picker .rdrMonth {
+  padding: 0 0.833em 1.666em 0.833em;
+  /* z-index: 4; */
+}
+
+.filter-container
+  .date-picker:where(.css-dev-only-do-not-override-1wazalj).ant-picker {
+  font-size: 14px;
+  border-radius: 3.5px;
+  border: 1px solid #c5c5c5;
+  height: 3.46rem;
+  /* height: 2.75rem; */
+}
+
+:where(.css-1wazalj).ant-picker {
+  padding: 16px 10px 16px;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  bottom: -5px;
+  top: 4px;
+}
+
+.show-dates {
+  font-size: 12px;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+.orders-container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  align-content: stretch;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent transparent #888;
+  overflow-x: auto;
+  flex-wrap: wrap;
+}
+
+.orders-table-head-row > .info {
+  font-weight: 800;
+}
+
+.accordian-body p {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+.order-entries .css-1ygcj2i-MuiTableCell-root {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(224, 224, 224, 1);
+}
+
+.order-entries .css-1ex1afd-MuiTableCell-root {
+  border: 1px solid rgba(224, 224, 224, 1);
+  justify-content: center;
+  color: gray;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.order-entries .css-ahj2mt-MuiTypography-root {
+  font-size: 14px;
+}
+
+.orders-container::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+  height: 4px;
+}
+
+.orders-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+.search-orders .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px 14px;
+}
+
+.search-orders Button {
+  /* margin-top: 0.5rem; */
+  background-color: #6041a1;
+}
+
+.search-orders .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  margin-right: 1rem;
+}
+
+.success {
+  background: #d5f9de;
+  padding: 5px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #00c893;
+  font-weight: 600;
+}
+
+.pending {
+  background: #f7e3e2;
+  padding: 5px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #d84315;
+  font-weight: 600;
+}
+
+.pagination-style {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #d2d2d2;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 500px) {
+  .filter-section,
+  .orders-section {
+    width: 94%;
+    gap: 1rem;
+  }
+
+  .filter-head,
+  .order-head {
+    gap: 1rem;
+  }
+}

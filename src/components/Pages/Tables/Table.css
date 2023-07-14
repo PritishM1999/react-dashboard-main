@@ -1,0 +1,35 @@
+.MuiTableRow-root > * {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.Table td,
+.Table th {
+  border: 1px solid rgb(218, 218, 218) !important;
+  border-radius: 15px;
+}
+
+.first-row {
+  background-color: lightgray;
+}
+
+/* .MuiTableRow-root > * {
+  padding: 10px;
+} */
+
+.MuiTableRow-root.MuiTableRow-head > * {
+  font-weight: bold !important;
+}
+
+.Table:first-child {
+  border-radius: 2rem !important;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Table h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}

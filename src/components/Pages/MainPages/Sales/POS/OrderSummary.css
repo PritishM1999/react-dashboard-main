@@ -1,0 +1,90 @@
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+.customer-info-head {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  border-bottom: 1px solid rgb(210, 210, 210);
+  padding: 1rem;
+}
+
+.customer-info {
+  border: 1px solid rgb(210, 210, 210);
+}
+
+.payment-console {
+  border-top: 1px solid rgb(233, 233, 233);
+}
+
+.customer-info-body {
+  line-height: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  padding: 1rem;
+}
+
+.customer-info-body span {
+  font-weight: 500;
+}
+
+.summary-main-container {
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+
+/* .MuiDialogTitle-root + .css-1ty026z {
+  padding: 1rem;
+} */
+
+.list-products {
+  display: inline;
+}
+
+.summary-main-container .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  width: 100%;
+}
+
+.css-ypiqx9-MuiDialogContent-root {
+  padding: 0px;
+}
+
+.summary-container {
+  overflow-x: scroll;
+}
+
+.summary-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.summary-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 2px;
+}
+
+.summary-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* responsive - 320 */
+
+@media only screen and (max-width: 1200px) {
+  .product-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid rgb(210, 210, 210);
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .summary-main-container {
+    padding: 0;
+  }
+}

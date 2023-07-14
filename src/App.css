@@ -1,0 +1,75 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:focus-visible {
+  outline: none !important;
+}
+
+body {
+  margin: 0px;
+  color: rgb(54, 65, 82);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.334em;
+  font-family: Poppins, sans-serif;
+  background-color: rgb(255 255 255) !important;
+  overflow-x: hidden;
+}
+
+.css-1ald77x,
+.css-1ald77x.Mui-focused {
+  display: none;
+}
+
+:where(.css-dev-only-do-not-override-1wazalj).ant-input {
+  border-color: #bfbfbf;
+  padding: 4px 11px 0px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.main {
+  display: flex;
+}
+
+.main-container {
+  background-color: rgb(238, 242, 246);
+  flex-grow: 1;
+  padding: 24px;
+  margin-top: 80px;
+  border-radius: 10px 0px 0px;
+  transition: margin 400ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.css-1oj2twp-MuiPagination-root :focus {
+  outline: none;
+  border: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .main-container {
+    border-radius: 10px 10px;
+    padding: 10px 0px 10px 25px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .main-container {
+    border-radius: 10px 10px;
+    padding: 10px 0px 10px 25px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .main-container {
+    border-radius: 10px 10px;
+    padding: 10px 0px 10px 25px;
+  }
+}

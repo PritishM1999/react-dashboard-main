@@ -1,0 +1,55 @@
+.table-sm td,
+.table-sm th {
+  padding: 0.8rem;
+}
+
+.table thead th {
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+.table tbody td {
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: #5f5f5f !important;
+}
+
+.bg-dark-secondary {
+  background-color: #444;
+}
+
+.card {
+  border-radius: 8px !important;
+}
+
+.table-image {
+  width: 50px;
+  height: 50px;
+}
+
+.table-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 500px) {
+  .card {
+
+    margin-right: 25px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .card {
+
+    margin-right: 25px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .card {
+    margin-right: 25px;
+  }
+}

@@ -1,0 +1,19 @@
+.add-profiles-main .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  display: none;
+}
+
+:where(.css-dev-only-do-not-override-1wazalj).ant-input {
+  border-color: #bfbfbf;
+  padding: 4px 11px 0px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+textarea::placeholder {
+  height: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* .save-btn {
+  text-transform: capitalize;
+} */

@@ -1,0 +1,53 @@
+.permissions {
+  border-bottom: 1px solid rgb(226, 226, 226);
+  width: 100%;
+}
+
+.permission-card-head {
+  border-bottom: 1px solid #6666 !important;
+  height: 3rem;
+  background-color: #f7f7f8;
+  padding: 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 1rem;
+}
+
+.permission-card {
+  max-width: 32vw;
+  width: 100%;
+}
+
+.permission-card h5 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.permission-card-form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+@media only screen and (max-width: 500px) {
+  .permission-card {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* @media only screen and (max-width: 375px) {
+  .main-container {
+    border-radius: 10px 10px;
+    padding: 10px 0px 10px 25px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .main-container {
+    border-radius: 10px 10px;
+    padding: 10px 0px 10px 25px;
+  }
+} */

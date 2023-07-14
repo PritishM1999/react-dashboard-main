@@ -1,0 +1,177 @@
+.Main-Dash {
+  flex: 1;
+  padding: 20px;
+  align-items: center;
+}
+
+.Main-Dash h3 {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* .Main-Dash h1 {
+  padding-left: 100px;
+} */
+
+.main-canvas2 {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+  top: 4.8rem;
+  /* background: #f4f5fa; */
+  background: #eef2f6;
+  border-radius: 15px;
+  position: fixed;
+  right: 0.4rem;
+  transition: width 0.3s ease;
+  height: 88%;
+}
+
+/* Scrollbar */
+.scroll-container {
+  overflow: auto;
+  max-height: 100%;
+  width: auto;
+}
+
+/* Track */
+.main-canvas2::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Set a background color for the track */
+}
+
+/* Handle */
+.main-canvas2::-webkit-scrollbar-thumb {
+  background: #704cb9; /* Set a background color for the scroll thumb */
+  border-radius: 2px; /* Add rounded corners to the scroll thumb */
+}
+
+/* Handle on hover */
+.main-canvas2::-webkit-scrollbar-thumb:hover {
+  background: #5e35b1; /* Set a background color for the scroll thumb on hover */
+}
+
+/* Thin scrollbar */
+.main-canvas2::-webkit-scrollbar {
+  width: 4px; /* Set the width of the scrollbar */
+  height: 4px;
+}
+
+/* Scroll-End */
+
+/* .sidebar-visible {
+  width: calc(100% - 18%);
+} */
+
+/* .collapsed-sidebar-visible {
+  width: calc(
+    100% - 100px
+  ); 
+} */
+
+/* .main-canvas2 {
+  top: 90px;
+  width: 98%;
+  height: 89%;
+  background: #eef2f6;
+  border-radius: 15px;
+  right: -10px;
+} */
+
+/* @media screen and (max-width: 2560px) {
+  .main-canvas2 {
+    width: 92.2vw;
+  }
+} */
+
+/* @media screen and (max-width: 1920px) {
+  .main-canvas2 {
+    width: 86vw;
+  }
+} */
+
+/*
+@media screen and (max-width: 1660px) {
+  .main-canvas2 {
+    width: 83vw;
+  }
+}
+
+@media screen and (max-width: 1460px) {
+  .main-canvas2 {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-canvas2 {
+    width: 74vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-canvas2 {
+    width: 74vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-canvas2 {
+    width: 74vw;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .main-canvas2 {
+    width: 102vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main-canvas2 {
+    width: 116vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .main-canvas2 {
+    width: 116vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main-canvas2 {
+    width: 132vw;
+  }
+} */
+
+/* .sidebar.collapsed ~ .main-canvas2 {
+  width: 100vw;
+}*/
+
+/* .MainDash {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+} */
+
+/* .main-canvas { */
+/* width: 97%;
+  height: 97%;
+  background: rgb(215, 27, 27);
+  border-radius: 15px;
+  z-index: 999;
+  position: relative; */
+/* } */
+
+/* .main-canvas2 {
+  top: 5.2rem;
+  width: 82%;
+  height: 86%;
+  background: #eef2f6;
+  border-radius: 15px; */
+/* z-index: 999; */
+/* position: fixed;
+  right: 0.6rem;
+  display: flex;
+} */

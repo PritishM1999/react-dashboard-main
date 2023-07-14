@@ -1,0 +1,237 @@
+.order-details-main-container {
+  background-color: #ffffff;
+}
+
+.view-payment-details span,
+.view-payment-details2 span {
+  display: flex;
+  gap: 10px;
+}
+
+.view-payment-details h6,
+.view-payment-details p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  width: 220px;
+}
+
+.view-payment-details p,
+.view-payment-details2 {
+  font-size: 14px;
+  width: 260px;
+}
+
+.view-payment-details2 h6,
+.view-payment-details2 p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.view-payment-details2 span {
+  justify-content: space-between;
+}
+
+#test-orange {
+  font-size: 12px;
+  background-color: orange;
+  color: #ffffff;
+  padding: 0 5px 0 5px;
+  border-radius: 6px;
+}
+
+#order-id {
+  font-weight: 500;
+  color: blue;
+}
+
+.orders-container2 {
+  /* padding: 1rem; */
+  width: 100%;
+}
+
+.order-entries {
+  width: 100%;
+}
+
+.order-entries .css-q34dxg,
+.order-entries .css-1bigob2 {
+  border: 1px solid rgb(224, 224, 224);
+  border: 1px solid lightgrey;
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
+
+.order-entries3 {
+  width: 220px;
+  float: right;
+  border: 1px solid rgb(220, 220, 220);
+}
+
+.print-btn-view-invoice {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  /* position: absolute!important; */
+  border-radius: 5px;
+  border: 2px solid rgb(220, 220, 220);
+  padding: 1rem;
+  font-size: 26px;
+}
+
+.company-logo img {
+  width: 240px;
+  height: 80px;
+}
+
+.add-product-save-btn2 {
+  width: 280px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid gray;
+  padding: 0.3rem;
+  font-size: 18px;
+  color: blue;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: #f0f1f6;
+}
+
+.company-logo img {
+  width: 240px;
+  height: 80px;
+}
+
+.button-div-invoice {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.add-order-status-btn button {
+  height: 3rem;
+  width: 12rem;
+  background-color: #7356b2;
+  text-transform: capitalize;
+}
+
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.status-body {
+  padding: 1rem;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
+/* .status-dynamic-options, */
+.dynamic-input-field {
+  padding: 1rem 0 0 1rem;
+  width: 100%;
+}
+
+.delivery-type {
+  display: flex;
+  gap: 0rem;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.filter-container .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  display: none;
+}
+
+.order-status-table {
+  padding: 1rem;
+}
+
+.order-status-table .css-15wwp11-MuiTableHead-root {
+  background-color: #fbf9f9;
+}
+
+.order-status-table .css-1ygcj2i-MuiTableCell-root {
+  font-weight: 600;
+  color: rgb(99, 99, 99);
+  font-family: "Poppins", sans-serif;
+}
+
+.status-inputs {
+  line-height: 5rem;
+}
+
+.status-inputs TextField {
+  width: 100%;
+}
+
+.invoice-print-preview {
+  display: none;
+}
+
+@media print {
+  .invoice-print-preview {
+    display: block;
+  }
+}
+
+.inv-slip-head {
+  background-color: black;
+  color: #ffffff;
+  font-weight: 500;
+  hyphenate-character: 2px;
+  height: 2.5rem;
+  border-radius: 6px;
+  margin-top: 4.5rem;
+}
+
+.inv-slip-head h3 {
+  color: #ffffff;
+  font-weight: 400;
+  text-align: center;
+}
+
+.invoice-preview {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.inv-siip-table .css-1ex1afd-MuiTableCell-root {
+  width: 50%;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+}
+
+.orders-container2 .css-1ygcj2i-MuiTableCell-root {
+  border: 1px solid lightgray;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.invoice-entries .css-1ex1afd-MuiTableCell-root {
+  border: 1px solid lightgray;
+  justify-content: center;
+  color: black;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.orders-container2 .css-1ex1afd-MuiTableCell-root,
+.apply-border {
+  padding: 10px;
+  border: 1px solid lightgray;
+}

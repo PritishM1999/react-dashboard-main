@@ -1,0 +1,275 @@
+/* Sidebar */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 260px;
+  overflow-y: auto;
+  /* transition: width 0.3s linear;  */
+  background: rgb(255 255 255);
+  height: 100vh;
+  overflow-y: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 16px;
+}
+
+.sidebar-closed .sidebar {
+  width: 80px;
+}
+
+.main-container {
+  margin-left: 260px;
+  /* transition: margin-left 0.3s linear;  */
+}
+
+.sidebar-closed .main-container {
+  margin-left: 80px;
+}
+
+/* .sidebar {
+  background: rgb(255 255 255);
+  height: 100vh;
+  overflow-y: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 16px;
+} */
+
+.top_section {
+  position: relative;
+}
+
+.bars {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  z-index: 4;
+  width: -moz-fit-content;
+  background-color: #ede7f6;
+  position: fixed;
+  top: 1.29rem;
+  left: 12.5rem;
+  border-radius: 6px;
+  color: #5e35b1;
+  font-size: 36px;
+}
+
+.bars:hover {
+  background-color: #5e35b1;
+  color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+.FiChevronRight {
+  width: 20px;
+  height: 20px;
+  color: #5f5f5f;
+}
+
+.routes {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-link,
+.menu {
+  color: #5f5f5f;
+  /* transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045); */
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  min-width: 0px;
+  box-sizing: border-box;
+  text-align: left;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  font-family: poppins, sans-serif;
+  line-height: 24px;
+  margin-left: 4px;
+}
+
+.menu-link:hover,
+.menu:hover {
+  background: rgb(237, 231, 246);
+  color: rgb(103, 58, 183);
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  text-decoration: none;
+}
+
+.active {
+  background: rgb(237, 231, 246);
+  color: rgb(103, 58, 183);
+  font-weight: 500;
+}
+.sub_menu_container .active {
+  background: rgb(237 231 246 / 0%) !important;
+  color: rgb(103, 58, 183);
+  font-weight: 500;
+}
+
+.link_text {
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu_item {
+  display: flex;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_container .link {
+  padding-left: 20px;
+  border-bottom: #fff 0.5px solid;
+}
+
+.dropdown-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.menu.open .menu_container {
+  display: block;
+}
+
+/* Add this CSS code to your Sidebar.css file */
+
+.menu_container {
+  display: none;
+  margin-left: 16px !important;
+  border-left: 1px solid #dedede;
+}
+
+.sub_menu_container {
+  margin-left: 25px !important;
+  border-left: 1px solid #dedede;
+}
+
+.submenu {
+  width: 100% !important;
+}
+
+.submenu .link_text {
+  white-space: wrap;
+}
+
+.sub-menu-item {
+  padding-left: 10px;
+}
+
+.icon {
+  min-width: 36px;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ::-webkit-scrollbar */
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 14px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+  height: 3px;
+}
+
+.help-text,
+.help-text:hover {
+  font-size: 14px;
+  color: #5f5f5f;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .container-fluid {
+    padding-right: -15px;
+    padding-left: -15px;
+  }
+  .sidebar-closed .sidebar {
+    display: none;
+  }
+  .sidebar-closed .main-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container-fluid {
+    padding-right: -15px;
+    padding-left: -15px;
+  }
+  .sidebar-closed .sidebar {
+    display: none;
+  }
+  .sidebar-closed .main-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .container-fluid {
+    padding-right: -15px;
+    padding-left: -15px;
+  }
+  .sidebar-closed .sidebar {
+    display: none;
+  }
+  .sidebar-closed .main-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

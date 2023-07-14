@@ -1,0 +1,123 @@
+.NotifyTable {
+  max-width: auto;
+}
+
+.NotifyTable h3 {
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0;
+}
+
+.NotifyTable .css-11xur9t-MuiPaper-root-MuiTableContainer-root {
+  box-shadow: none;
+}
+
+.seachAndNos {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgb(201, 200, 200);
+}
+
+.nos-notify {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  flex-direction: row;
+  /* margin-top: -4px; */
+  margin-bottom: 0px;
+  width: 4.5rem;
+  height: 2rem;
+}
+
+.search-in-table-notifi {
+  display: flex;
+  flex-direction: column;
+  /* height: 10px; */
+  justify-content: right;
+  /* margin-bottom: 20px; */
+  /* margin-top: -10px; */
+  position: relative;
+}
+
+.search-in-table-notifi .css-1uvydh2 {
+  padding: 6px;
+}
+
+.search-in-table .css-yjsfm1 {
+  height: 32px;
+  width: 140px;
+}
+
+.search-in-table .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px 0px;
+  height: 1em;
+}
+
+/* .search-in-table-notifi:first-child {
+  padding: 10px;
+} */
+
+.TableContainer {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.TableContainer .MuiTable {
+  min-width: 650px;
+}
+.spaces {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.pagination-style {
+  border-top: 1px solid rgb(201, 200, 200);
+  padding: 1rem;
+  justify-content: right;
+  display: "flex";
+}
+
+.css-1oj2twp-MuiPagination-root:focus {
+  outline: none;
+  border: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .seachAndNos {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-in-table-notifi {
+    margin-bottom: 0rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .seachAndNos {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .seachAndNos {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

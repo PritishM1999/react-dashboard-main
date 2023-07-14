@@ -1,0 +1,65 @@
+.search-inventory .css-yjsfm1 {
+  height: 32px;
+  width: 140px;
+}
+
+.search-inventory.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 14px;
+  height: 1em;
+}
+
+.search-inventory .css-yjsfm1 {
+  padding-bottom: 32px;
+}
+
+.search-inventory .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px 14px;
+}
+
+.card-header h3 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 18px;
+  color: #333;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy-button {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.copy-button button {
+  background-color: #734bb8;
+  text-transform: capitalize;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.popup p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.css-11xur9t-MuiPaper-root-MuiTableContainer-root {
+  box-shadow: none;
+}

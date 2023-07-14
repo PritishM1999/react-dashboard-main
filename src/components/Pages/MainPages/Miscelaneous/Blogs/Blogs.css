@@ -1,0 +1,177 @@
+.tabs-butons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.tabs-butons button {
+  background-color: #7356b2;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  line-height: 28px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.NotifyTable {
+  text-align: center;
+}
+
+.blog-img img {
+  max-height: 60px;
+}
+
+.searchAndNosBlogs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgb(201, 198, 198);
+  padding: 1.5rem 1rem 0 1rem;
+}
+
+.BlogsTable h2 {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.pagination-style {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.pagination-style .css-1oj2twp-MuiPagination-root {
+  justify-content: center;
+  width: 100%;
+}
+
+[type="reset"],
+[type="submit"],
+button,
+html [type="button"] {
+  -webkit-appearance: button;
+  outline: none;
+  border: none;
+}
+
+.search .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 8px;
+  padding: 1.5rem 1rem 1.2rem 1rem;
+}
+
+.searchAndNosBlogs
+  .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  height: 50px;
+}
+
+.BlogsTable td,
+.BlogsTable th {
+  border-radius: 15px;
+}
+
+.BlogsTable .css-11xur9t-MuiPaper-root-MuiTableContainer-root {
+  box-shadow: none;
+}
+
+.nos {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  width: 4.5rem;
+  height: 2rem;
+}
+
+.search-in-table-blogs {
+  display: flex;
+  position: relative;
+  justify-content: right;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  height: 2rem;
+}
+
+.search-in-table-blogs .css-yjsfm1 {
+  height: 32px;
+  width: 140px;
+}
+
+.search-in-table-blogs .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px;
+  height: 1em;
+}
+
+.search-in-table .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px 0px;
+}
+
+.search-in-table:first-child,
+.search-in-table-blogs:first-child {
+  padding: 10px;
+}
+
+.searchAndNosBlogs
+  .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  height: 34px;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  height: 2.1rem;
+  top: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .searchAndNosBlogs {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-in-table-blogs {
+    margin-bottom: 2rem;
+  }
+
+  .tabs-butons button {
+    line-height: 18px;
+  }
+
+  .tabs-butons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .searchAndNosBlogs {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-in-table-blogs {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .searchAndNosBlogs {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-in-table-blogs {
+    margin-bottom: 2rem;
+  }
+}

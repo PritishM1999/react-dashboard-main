@@ -1,0 +1,21 @@
+.user-role {
+  padding: 4px;
+  background-color: #666ee8;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Add Employees 2*/
+.partition {
+  position: static;
+  width: 100%;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  margin-left: 1rem;
+}
+
+.css-1ald77x.Mui-focused {
+  display: none;
+}
