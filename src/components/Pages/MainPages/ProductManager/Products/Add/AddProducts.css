@@ -60,11 +60,6 @@
   max-height: auto;
 }
 
-.input-editor {
-  width: 50%;
-  position: relative;
-}
-
 .input-field {
   width: 100%;
   display: flex;
@@ -176,11 +171,6 @@
   .editors {
     flex-direction: column;
   }
-
-  .input-editor {
-    width: 100%;
-    position: relative;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -193,11 +183,6 @@
 
   .editors {
     flex-direction: column;
-  }
-
-  .input-editor {
-    width: 100%;
-    position: relative;
   }
 
   .low-quantity .css-1f2kvjf-MuiFormControlLabel-root {
@@ -222,10 +207,4 @@
     margin-left: 10vw;
     margin-top: 10vh;
   }
-}
-
-@media only screen and (max-width: 375px) {
-}
-
-@media only screen and (max-width: 320px) {
 }

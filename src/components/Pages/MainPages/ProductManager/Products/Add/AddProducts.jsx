@@ -29,12 +29,62 @@ import AddCategories from "../Categories/AddCategories";
 import AddUnit from "../Unit/AddUnit";
 import AddManufacturer from "../Manufacturer/Manufacturer";
 
+const categoryOptions = [
+  { value: "electronics", label: "Electronics" },
+  { value: "clothing", label: "Clothing" },
+  { value: "home", label: "Home" },
+  // Add more options as needed
+];
+
+const brandOptions = [
+  { value: "brand1", label: "Brand 1" },
+  { value: "brand2", label: "Brand 2" },
+  { value: "brand3", label: "Brand 3" },
+  // Add more options as needed
+];
+
+const supplierOptions = [
+  { value: "supplier1", label: "Supplier 1" },
+  { value: "supplier2", label: "Supplier 2" },
+  { value: "supplier3", label: "Supplier 3" },
+  // Add more options as needed
+];
+
+const manufacturerOptions = [
+  { value: "manufacturer1", label: "Manufacturer 1" },
+  { value: "manufacturer2", label: "Manufacturer 2" },
+  { value: "manufacturer3", label: "Manufacturer 3" },
+  // Add more options as needed
+];
+
+const subcategoryOptions = [
+  { value: "subcategory1", label: "Subcategory 1" },
+  { value: "subcategory2", label: "Subcategory 2" },
+  { value: "subcategory3", label: "Subcategory 3" },
+  // Add more options as needed
+];
+
+// Define dynamic menu items
+const shippingOptions = [
+  { value: "Select", label: "Select One" },
+  { value: "all", label: "All" },
+  { value: "pending", label: "Pending Order" },
+  { value: "confirm", label: "Ready for Collection" },
+  { value: "collected", label: "Collected" },
+  { value: "pickedup", label: "Shipped" },
+  { value: "delivered", label: "Delivered Orders" },
+];
+
 const AddProducts = () => {
-  const [brandValue, setBrandValue] = useState("");
-  const [supplierValue, setSupplierValue] = useState("");
-  const [categoryValue, setCategoryValue] = useState("");
-  const [subcategoryValue, setSubcategoryValue] = useState("");
-  const [manufacturerValue, setManufacturerValue] = useState("");
+  const [brandValue, setBrandValue] = useState(brandOptions[0]);
+  const [supplierValue, setSupplierValue] = useState(supplierOptions[0]);
+  const [categoryValue, setCategoryValue] = useState(categoryOptions[0]);
+  const [subcategoryValue, setSubcategoryValue] = useState(
+    subcategoryOptions[0]
+  );
+  const [manufacturerValue, setManufacturerValue] = useState(
+    manufacturerOptions[0]
+  );
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
@@ -150,52 +200,6 @@ const AddProducts = () => {
       }),
     },
   }));
-
-  const categoryOptions = [
-    { value: "electronics", label: "Electronics" },
-    { value: "clothing", label: "Clothing" },
-    { value: "home", label: "Home" },
-    // Add more options as needed
-  ];
-
-  const brandOptions = [
-    { value: "brand1", label: "Brand 1" },
-    { value: "brand2", label: "Brand 2" },
-    { value: "brand3", label: "Brand 3" },
-    // Add more options as needed
-  ];
-
-  const supplierOptions = [
-    { value: "supplier1", label: "Supplier 1" },
-    { value: "supplier2", label: "Supplier 2" },
-    { value: "supplier3", label: "Supplier 3" },
-    // Add more options as needed
-  ];
-
-  const manufacturerOptions = [
-    { value: "manufacturer1", label: "Manufacturer 1" },
-    { value: "manufacturer2", label: "Manufacturer 2" },
-    { value: "manufacturer3", label: "Manufacturer 3" },
-    // Add more options as needed
-  ];
-
-  const subcategoryOptions = [
-    { value: "subcategory1", label: "Subcategory 1" },
-    { value: "subcategory2", label: "Subcategory 2" },
-    { value: "subcategory3", label: "Subcategory 3" },
-    // Add more options as needed
-  ];
-
-  // Define dynamic menu items
-  const shippingOptions = [
-    { value: "Select", label: "Select One" },
-    { value: "all", label: "All" },
-    { value: "pending", label: "Pending Order" },
-    { value: "confirm", label: "Ready for Collection" },
-    { value: "collected", label: "Collected" },
-    { value: "pickedup", label: "Shipped" },
-    { value: "delivered", label: "Delivered Orders" },
-  ];
 
   return (
     <>
@@ -525,7 +529,7 @@ const AddProducts = () => {
                   onChange={handleEditorChange}
                   config={{
                     ckfinder: {
-                      uploadUrl: "/your_upload_image_endpoint", // Replace with your image upload endpoint
+                      // uploadUrl: "/your_upload_image_endpoint", // Replace with your image upload endpoint
                     },
                   }}
                 />
@@ -658,15 +662,16 @@ const AddProducts = () => {
                 placeholder="Meta Pixcels"
               ></textarea>
             </div>
+            <br />
+            {/* Submit button */}
+            <div className="add-product-save-btn">
+              <Button className="save-btn" variant="contained">
+                Save
+              </Button>
+            </div>
           </div>
         </section>
         <br />
-        {/* Submit button */}
-        <div className="add-product-save-btn">
-          <Button className="save-btn" variant="contained">
-            Save
-          </Button>
-        </div>
       </div>
     </>
   );
