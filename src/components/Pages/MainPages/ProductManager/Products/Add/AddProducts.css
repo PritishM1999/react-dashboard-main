@@ -54,11 +54,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-.editors {
-  display: flex;
-  gap: 1rem;
-  max-height: auto;
-}
 
 .input-field {
   width: 100%;
@@ -107,6 +102,8 @@
   border-color: #c4c4c4;
   border-radius: 4px;
   padding: 0.34rem 0.75rem 0 0.75rem;
+  height: 55px;
+  color: lightgray;
 }
 
 .add-product-save-btn {
@@ -135,6 +132,8 @@
   font-family: "Poppins", sans-serif;
   text-transform: capitalize;
 }
+
+
 
 .modal-content {
   max-height: 80vh;
@@ -168,9 +167,7 @@
     flex-direction: column;
   }
 
-  .editors {
-    flex-direction: column;
-  }
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -178,10 +175,6 @@
     width: 100%;
     gap: 1rem;
     display: flex;
-    flex-direction: column;
-  }
-
-  .editors {
     flex-direction: column;
   }
 

@@ -16,7 +16,6 @@ import {
   OutlinedInput,
   InputAdornment,
 } from "@mui/material";
-// import "./Allorders.css";
 import { Link } from "react-router-dom";
 import { MoreVertOutlined, DeleteOutlined } from "@mui/icons-material";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";

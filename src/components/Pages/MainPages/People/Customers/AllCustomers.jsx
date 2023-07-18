@@ -33,18 +33,17 @@ import {
   FormControlLabel,
 } from "@mui/material";
 import { saveAs } from "file-saver";
-// import { CSVLink } from "react-csv";
+
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import copy from "copy-to-clipboard";
-import "@mui/icons-material";
-import "@mui/material";
+
 import "./AllCustomers.css";
 import { Link } from "react-router-dom";
 
-// eslint-disable-next-line
+
 const AllCustomers = () => {
-  function createData(
+  function CreateData(
     srNo,
     StockUpdateOn,
     ProcutDesc,
@@ -69,7 +68,7 @@ const AllCustomers = () => {
   }
 
   const rows = [
-    createData(
+    CreateData(
       1,
       "Jul 13 2023",
       "Users Name",
@@ -80,7 +79,7 @@ const AllCustomers = () => {
       "44.29",
       "Total Stock: 1"
     ),
-    createData(
+    CreateData(
       2,
       "Jul 13 2023",
       "Users Name",
@@ -91,7 +90,7 @@ const AllCustomers = () => {
       "44.29",
       "Total Stock: 1"
     ),
-    createData(
+    CreateData(
       3,
       "Jul 13 2023",
       "Users Name",
@@ -471,24 +470,28 @@ const AllCustomers = () => {
                           },
                         }}
                       >
-                        <Link to="/testDashboard/Sales/all-orders">
-                          <MenuItem onClick={handleMenuClose}>
+                        
+                          <MenuItem onClick={handleMenuClose} style={{color:"black"}}>
+                          <Link to="/testDashboard/Sales/all-orders">
                             <ShoppingCartOutlinedIcon
                               fontSize="small"
                               style={{ marginRight: "5px" }}
                             />
                             Customer Orders
+                            </Link>
                           </MenuItem>
-                        </Link>
-                        <Link to="/testDashboard/People/GeneralCustomers/edit-customers">
-                          <MenuItem onClick={handleMenuClose}>
+                       
+                          <MenuItem onClick={handleMenuClose} style={{color:"black"}}>
+                          <Link to="/testDashboard/People/GeneralCustomers/edit-customers">
+
                             <EditOutlined
                               fontSize="small"
                               style={{ marginRight: "5px" }}
                             />
                             Edit
+                            </Link>
                           </MenuItem>
-                        </Link>
+                        
                         <MenuItem onClick={handleMenuClose}>
                           <DeleteOutlined
                             fontSize="small"

@@ -32,12 +32,10 @@ import { saveAs } from "file-saver";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import copy from "copy-to-clipboard";
-import "@mui/icons-material";
-import "@mui/material";
+
 import { Link } from "react-router-dom";
 import "./SubsDiscount.css";
 
-// eslint-disable-next-line
 const SubscriptionDiscount = () => {
   function createData(
     srNo,

@@ -18,13 +18,12 @@ import {
   IconButton,
   Menu,
 } from "@mui/material";
-import "@mui/icons-material";
-import "@mui/material";
+
 import "./AllCustomers.css";
 
-// eslint-disable-next-line
+
 const DeletedCustomers = () => {
-  function createData(
+  function CreateData(
     srNo,
     StockUpdateOn,
     ProcutDesc,
@@ -49,7 +48,7 @@ const DeletedCustomers = () => {
   }
 
   const rows = [
-    createData(
+    CreateData(
       1,
       "Jul 13 2023",
       "Users Name",
@@ -60,7 +59,7 @@ const DeletedCustomers = () => {
       "44.29",
       "Total Stock: 1"
     ),
-    createData(
+    CreateData(
       2,
       "Jul 13 2023",
       "Users Name",
@@ -71,7 +70,7 @@ const DeletedCustomers = () => {
       "44.29",
       "Total Stock: 1"
     ),
-    createData(
+    CreateData(
       3,
       "Jul 13 2023",
       "Users Name",
@@ -235,15 +234,17 @@ const DeletedCustomers = () => {
                           },
                         }}
                       >
-                        <Link to="/testDashboard/People/GeneralCustomers/edit-customers">
-                          <MenuItem onClick={handleMenuClose}>
+                          <MenuItem onClick={handleMenuClose} style={{color:"black"}}>
+                          <Link to="/testDashboard/People/GeneralCustomers/edit-customers">
+
                             <EditOutlined
                               fontSize="small"
                               style={{ marginRight: "5px" }}
                             />{" "}
                             Edit
+                            </Link>
                           </MenuItem>
-                        </Link>
+                       
                         <MenuItem onClick={handleMenuClose}>
                           <RestorePageOutlinedIcon
                             fontSize="small"

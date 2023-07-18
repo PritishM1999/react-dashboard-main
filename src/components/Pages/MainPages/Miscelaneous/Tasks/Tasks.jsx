@@ -66,7 +66,7 @@ const Tasks = () => {
                     // grid={[100, 230]}
                     grid={[50, 50]}
                     scale={1}
-                    // bounds=".move-tasks"
+                    bounds=".all-task-actions"
                     // className="adjust-draggable"
                   >
                     <div className="task-card-container" ref={cardRef}>
@@ -89,7 +89,12 @@ const Tasks = () => {
                   </Draggable>
                 </div>
 
-                <div className="task">
+              <section className="all-task-actions">
+                <div
+                  className="task"
+                  // bounds=".move-tasks"
+                  // handle=".task-list"
+                >
                   <label>Task</label>
                 </div>
                 <div className="process">
@@ -101,6 +106,7 @@ const Tasks = () => {
                 <div className="complete">
                   <label>Completed</label>
                 </div>
+                </section>
               </div>
             </div>
           </div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import BrandImage from "../../../../../../assets/products/product-bottle.jpg";
-// import { Link } from "react-router-dom";
 import "./ProductReviews.css";
 import { AiFillStar } from "react-icons/ai";
 

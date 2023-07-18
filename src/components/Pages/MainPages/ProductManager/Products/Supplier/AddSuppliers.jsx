@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import React from "react";
 
 import {
@@ -13,11 +12,7 @@ import "./AddSuppliers.css";
 import countries from "../../../Countries/Countries";
 
 const AddSuppliers = () => {
-  // const [selectedCategory, setSelectedCategory] = useState("");
 
-  // const handleChange = (event) => {
-  //   setSelectedCategory(event.target.value);
-  // };
 
   return (
     <>
@@ -75,29 +70,25 @@ const AddSuppliers = () => {
                 </FormControl>
               </div>
             </Grid>
+            <Grid
+              item
+              xs={12}
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              {/* Submit button */}
+              <Button
+                className="save-btn"
+                variant="contained"
+                style={{ background: "#7356b2" }}
+              >
+                Save
+              </Button>
+            </Grid>
           </Grid>
         </div>
-      </div>
-      <br />
-      <div>
-        <Grid
-          item
-          xs={12}
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          {/* Submit button */}
-          <Button
-            className="save-btn"
-            variant="contained"
-            style={{ background: "#7356b2" }}
-          >
-            Save
-          </Button>
-        </Grid>
-        <br />
       </div>
     </>
   );

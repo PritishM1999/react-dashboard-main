@@ -25,16 +25,13 @@ import {
   DialogContent,
 } from "@mui/material";
 import { saveAs } from "file-saver";
-// import { CSVLink } from "react-csv";
+
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import copy from "copy-to-clipboard";
-import "@mui/icons-material";
-import "@mui/material";
-import { Link } from "react-router-dom";
-// import "../ProductInventory.css";
 
-// eslint-disable-next-line
+import { Link } from "react-router-dom";
+
 const AllSubscribers = () => {
   function createData(
     srNo,

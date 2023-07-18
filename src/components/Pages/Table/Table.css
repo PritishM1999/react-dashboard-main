@@ -41,15 +41,3 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
-  .card {
-
-    margin-right: 25px;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .card {
-    margin-right: 25px;
-  }
-}

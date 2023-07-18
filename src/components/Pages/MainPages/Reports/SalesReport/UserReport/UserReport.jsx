@@ -27,13 +27,10 @@ import { saveAs } from "file-saver";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import copy from "copy-to-clipboard";
-import "@mui/icons-material";
-import "@mui/material";
-// import "./AllCustomers.css";
+
 import "../Reports.css";
 import { Link } from "react-router-dom";
 
-// eslint-disable-next-line
 const UserReport = () => {
   function createData(
     srNo,

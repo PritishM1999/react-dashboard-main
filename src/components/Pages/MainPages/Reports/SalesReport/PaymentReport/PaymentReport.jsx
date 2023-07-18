@@ -27,15 +27,13 @@ import { saveAs } from "file-saver";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import copy from "copy-to-clipboard";
-import "@mui/icons-material";
-import "@mui/material";
+
 
 import "../Reports.css";
 import { Link } from "react-router-dom";
 
-// eslint-disable-next-line
 const PaymentReport = () => {
-  function createData(
+  function CreateData(
     srNo,
     StockUpdateOn,
     ProcutDesc,
@@ -60,7 +58,7 @@ const PaymentReport = () => {
   }
 
   const rows = [
-    createData(
+    CreateData(
       1,
       "Jul 13 2023",
       "Users Name",
@@ -71,7 +69,7 @@ const PaymentReport = () => {
       "44.29",
       "Total Stock: 1"
     ),
-    createData(
+    CreateData(
       2,
       "Jul 13 2023",
       "Users Name",
@@ -82,7 +80,7 @@ const PaymentReport = () => {
       "44.29",
       "Total Stock: 1"
     ),
-    createData(
+    CreateData(
       3,
       "Jul 13 2023",
       "Users Name",
@@ -447,7 +445,10 @@ const PaymentReport = () => {
             <div className="search-inventory">
               <div className="search-in-table">
                 <OutlinedInput
-                sx={{ '& legend': { display: 'none' }, '& fieldset': { top: 0 },}} 
+                  sx={{
+                    "& legend": { display: "none" },
+                    "& fieldset": { top: 0 },
+                  }}
                   value={searchText}
                   onChange={handleSearchChange}
                   id="outlined-adornment-weight"

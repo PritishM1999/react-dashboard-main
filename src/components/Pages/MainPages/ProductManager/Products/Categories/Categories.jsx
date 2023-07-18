@@ -69,9 +69,6 @@ const Categories = () => {
     handleMenuClose();
   };
 
-  // const handleClosePopup = () => {
-  //   setOpenFunctionPopup(false);
-  // };
 
   const handleSearchChange = (event) => {
     setSearchText(event.target.value);

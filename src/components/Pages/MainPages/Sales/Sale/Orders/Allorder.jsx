@@ -421,17 +421,20 @@ const AllOrder = () => {
                               <EditOutlined sx={{ marginRight: 1 }} />
                               Edit
                             </MenuItem>
-                            <Link
-                              to="/testDashboard/Admin/view-order-details"
-                              onClick={handleMenuClose}
-                            >
-                              <MenuItem aria-label="View order details">
+
+                            <MenuItem aria-label="View order details">
+                              <Link
+                                to="/testDashboard/Admin/view-order-details"
+                                onClick={handleMenuClose}
+                                style={{color:"black"}}
+                              >
                                 <VisibilityOutlinedIcon
                                   sx={{ marginRight: 1 }}
                                 />
                                 View
-                              </MenuItem>
-                            </Link>
+                              </Link>
+                            </MenuItem>
+
                             <MenuItem onClick={handleMenuClose}>
                               <NotificationsActiveIcon
                                 sx={{ marginRight: 1 }}

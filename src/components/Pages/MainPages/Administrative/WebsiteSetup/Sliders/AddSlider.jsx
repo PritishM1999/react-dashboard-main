@@ -1,19 +1,12 @@
-// import React, { useState } from "react";
 import React from "react";
 import {
   TextField,
-  //   Select,
   Button,
   InputLabel,
-  //   MenuItem,
   Grid,
-  //   Autocomplete,
   Typography,
   FormControl,
 } from "@mui/material";
-
-// import "./Account.css";
-// import countries from "../../../Countries/Countries";
 
 const AddSlider = () => {
   const handleFileUploadGallary = (event) => {

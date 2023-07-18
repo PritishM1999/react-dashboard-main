@@ -1,6 +1,5 @@
 .row-conatiner .card-component {
   padding: 10px 10px 10px 25px;
-  /* padding: 24px; */
 }
 .card-component-inner {
   padding: 24px;
@@ -20,7 +19,7 @@
 
 .card-details h3 {
   color: #333;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   text-transform: capitalize;
   font-size: 18px;
   font-weight: 500;

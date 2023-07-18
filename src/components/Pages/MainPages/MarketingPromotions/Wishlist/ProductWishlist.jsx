@@ -29,14 +29,11 @@ import { saveAs } from "file-saver";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import copy from "copy-to-clipboard";
-import "@mui/icons-material";
-import "@mui/material";
-import { Link } from "react-router-dom";
-// import "../ProductInventory.css";
 
-// eslint-disable-next-line
+import { Link } from "react-router-dom";
+
 const ProductWishlist = () => {
-  function createData(
+  function CreateData(
     srNo,
     StockUpdateOn,
     ProcutDesc,
@@ -61,7 +58,7 @@ const ProductWishlist = () => {
   }
 
   const rows = [
-    createData(
+    CreateData(
       1,
       "Jul 13 2023",
       "Sample ProcutDesc description 180 caps",
@@ -72,7 +69,7 @@ const ProductWishlist = () => {
       "44.29",
       "Total Stock: 1"
     ),
-    createData(
+    CreateData(
       2,
       "Jul 13 2023",
       "Sample ProcutDesc description 180 caps",
@@ -83,7 +80,7 @@ const ProductWishlist = () => {
       "44.29",
       "Total Stock: 1"
     ),
-    createData(
+    CreateData(
       3,
       "Jul 13 2023",
       "Sample ProcutDesc description 180 caps",

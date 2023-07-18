@@ -521,20 +521,20 @@ const AddProducts = () => {
           </div>
 
           <div className="add-products-body">
-            <div className="editors">
-              <div className="input-editor">
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
                 <InputLabel>Product Description :</InputLabel>
                 <CKEditor
                   editor={ClassicEditor}
                   onChange={handleEditorChange}
                   config={{
                     ckfinder: {
-                      // uploadUrl: "/your_upload_image_endpoint", // Replace with your image upload endpoint
+                      uploadUrl: "/your_upload_image_endpoint", // Replace with your image upload endpoint
                     },
                   }}
                 />
-              </div>
-              <div className="input-editor">
+              </Grid>
+              <Grid item xs={12}>
                 <InputLabel>Other Description :</InputLabel>
                 <CKEditor
                   editor={ClassicEditor}
@@ -545,8 +545,8 @@ const AddProducts = () => {
                     },
                   }}
                 />
-              </div>
-            </div>
+              </Grid>
+            </Grid>
             <div className="input-field">
               <InputLabel className="input-field-pdf">
                 PDF Specification (Max 2MB size) :
