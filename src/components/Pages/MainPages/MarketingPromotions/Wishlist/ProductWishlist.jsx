@@ -245,7 +245,7 @@ const ProductWishlist = () => {
             <h3>Wishlist Products</h3>
             {/* Buttons */}
             <div className="tabs-butons">
-              <Link to="/testDashboard/Marketing-Promotions/product-wishlist/add-to-products">
+              <Link to="/admin/Marketing-Promotions/product-wishlist/add-to-products">
                 <Button variant="contained">Add</Button>
               </Link>
 
@@ -310,7 +310,7 @@ const ProductWishlist = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Sr. No.
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>Date</TableCell>
@@ -324,10 +324,10 @@ const ProductWishlist = () => {
                     <TableCell style={{ fontWeight: "bold" }}>Action</TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody align="center">
+                <TableBody align="left">
                   {displayedRows.map((row, index) => (
                     <TableRow key={index}>
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
                       <TableCell>{row.StockUpdateOn}</TableCell>

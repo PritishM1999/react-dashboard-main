@@ -167,31 +167,31 @@ const ProductReiews = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Photo
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Name
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Stock
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Info
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Sells / Rating
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Variation
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Supplier
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Added by
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Action
                     </TableCell>
                   </TableRow>
@@ -202,29 +202,29 @@ const ProductReiews = () => {
                       key={index}
                       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                     >
-                      <TableCell align="center">
+                      <TableCell align="left">
                         <div className="blog-img">
                           <img src={BrandImage} alt="Blog" />
                         </div>
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell align="left">
                         Skin Smoothing Cream 1.7oz
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell align="left">
                         Unit: Size <br />
                         Weight: 1.7 fl oz
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell align="left">
                         Rating: {row.srNo}
                         <span className="star-icon">
                           <AiFillStar />
                         </span>
                       </TableCell>
-                      <TableCell align="center">{row.title}</TableCell>
-                      <TableCell align="center">{row.category}</TableCell>
-                      <TableCell align="center">{row.category}</TableCell>
-                      <TableCell align="center">Admin</TableCell>
-                      <TableCell align="center">
+                      <TableCell align="left">{row.title}</TableCell>
+                      <TableCell align="left">{row.category}</TableCell>
+                      <TableCell align="left">{row.category}</TableCell>
+                      <TableCell align="left">Admin</TableCell>
+                      <TableCell align="left">
                         <IconButton
                           onClick={(event) => handleMenuOpen(event, row.srNo)}
                           size="small"

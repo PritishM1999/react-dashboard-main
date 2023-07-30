@@ -35,11 +35,11 @@ export default function BasicTable() {
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
-              <TableCell align="center">Invoice No</TableCell>
-              <TableCell align="center">Date</TableCell>
-              <TableCell align="center">Client</TableCell>
-              <TableCell align="center">Sub Total</TableCell>
-              <TableCell align="center">Net Total</TableCell>
+              <TableCell align="left">Invoice No</TableCell>
+              <TableCell align="left">Date</TableCell>
+              <TableCell align="left">Client</TableCell>
+              <TableCell align="left">Sub Total</TableCell>
+              <TableCell align="left">Net Total</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -51,15 +51,15 @@ export default function BasicTable() {
                 <TableCell component="th" scope="row">
                   {row.ID}
                 </TableCell>
-                <TableCell align="center">
+                <TableCell align="left">
                   <span className="Invoice" style={{ color: "#337AB7" }}>
                     {row.InvoiceNo}
                   </span>
                 </TableCell>
-                <TableCell align="center">{row.Date}</TableCell>
-                <TableCell align="center">{row.Client}</TableCell>
-                <TableCell align="center">{row.SubTotal}</TableCell>
-                <TableCell align="center">{row.NetTotal}</TableCell>
+                <TableCell align="left">{row.Date}</TableCell>
+                <TableCell align="left">{row.Client}</TableCell>
+                <TableCell align="left">{row.SubTotal}</TableCell>
+                <TableCell align="left">{row.NetTotal}</TableCell>
               </TableRow>
             ))}
           </TableBody>

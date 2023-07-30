@@ -24,13 +24,36 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
+  Box,
+  Tabs,
+  Tab,
 } from "@mui/material";
 import { saveAs } from "file-saver";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import copy from "copy-to-clipboard";
 
+import "./Oncart.css";
+
+function LinkTab(props) {
+  return (
+    <Tab
+      component="a"
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+      {...props}
+    />
+  );
+}
+
 const OnCart = () => {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   function createData(
     srNo,
     StockUpdateOn,
@@ -237,6 +260,27 @@ const OnCart = () => {
 
   return (
     <>
+      <div className="card">
+        <div className="card-head">
+          <Box sx={{ flexGrow: 1 }}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              aria-label="nav tabs example"
+              variant="scrollable"
+              scrollButtons="auto"
+            >
+              <LinkTab label="All" href="/" />
+              <LinkTab label="Deliverd" href="/" />
+              <LinkTab label="Cancelled" href="/" />
+              <LinkTab label="Currencies" href="/" />
+              <LinkTab label="Packages" href="/" />
+              <LinkTab label="Currencies" href="/" />
+            </Tabs>
+          </Box>
+        </div>
+      </div>
+      <br />
       <div>
         <div className="card">
           <div className="card-header">
@@ -260,42 +304,44 @@ const OnCart = () => {
           </div>
           {/* Buttons End*/}
           <div className="main-body2">
-
-              {/* Search and Nos */}
-              <div className="searchAndNosBlogs">
-                <div className="nos">
-                  Show <span className="spaces"></span>
-                  <Select
-                    value={rowsPerPage}
-                    onChange={handleRowsPerPageChange}
-                    label="Rows per page"
-                  >
-                    <MenuItem value={10}>10</MenuItem>
-                    <MenuItem value={25}>25</MenuItem>
-                    <MenuItem value={50}>50</MenuItem>
-                  </Select>
-                  <span className="spaces"></span> entries
-                </div>
-                <div className="search-inventory">
-                  <div className="search-in-table">
-                    <OutlinedInput
-                    sx={{ '& legend': { display: 'none' }, '& fieldset': { top: 0 },}} 
-                      value={searchText}
-                      onChange={handleSearchChange}
-                      id="outlined-adornment-weight"
-                      endAdornment={
-                        <InputAdornment position="start">
-                          Search...
-                        </InputAdornment>
-                      }
-                    />
-                  </div>
+            {/* Search and Nos */}
+            <div className="searchAndNosBlogs">
+              <div className="nos">
+                Show <span className="spaces"></span>
+                <Select
+                  value={rowsPerPage}
+                  onChange={handleRowsPerPageChange}
+                  label="Rows per page"
+                >
+                  <MenuItem value={10}>10</MenuItem>
+                  <MenuItem value={25}>25</MenuItem>
+                  <MenuItem value={50}>50</MenuItem>
+                </Select>
+                <span className="spaces"></span> entries
+              </div>
+              <div className="search-inventory">
+                <div className="search-in-table">
+                  <OutlinedInput
+                    sx={{
+                      "& legend": { display: "none" },
+                      "& fieldset": { top: 0 },
+                    }}
+                    value={searchText}
+                    onChange={handleSearchChange}
+                    id="outlined-adornment-weight"
+                    endAdornment={
+                      <InputAdornment position="start">
+                        Search...
+                      </InputAdornment>
+                    }
+                  />
                 </div>
               </div>
-              {/* Search and Nos END */}
+            </div>
+            {/* Search and Nos END */}
 
-              {/* Table */}
-              <TableContainer
+            {/* Table */}
+            <TableContainer
               component={Paper}
               style={{ boxShadow: "none" }}
               id="tableContainer"
@@ -303,7 +349,7 @@ const OnCart = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Sr. No.
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>Date</TableCell>
@@ -320,10 +366,10 @@ const OnCart = () => {
                     <TableCell style={{ fontWeight: "bold" }}>Action</TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody align="center">
+                <TableBody align="left">
                   {displayedRows.map((row, index) => (
                     <TableRow key={index}>
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
                       <TableCell>{row.StockUpdateOn}</TableCell>
@@ -366,25 +412,24 @@ const OnCart = () => {
                   ))}
                 </TableBody>
               </Table>
-              </TableContainer>
-              {/* Table End */}
+            </TableContainer>
+            {/* Table End */}
 
-              {/* Pagination */}
-              <div className="pagination-style-p-inventory">
-                <Pagination
-                  count={pageCount}
-                  page={page}
-                  onChange={handlePageChange}
-                  className="pagination-style"
-                  style={{
-                    display: "flex",
-                    // padding: "1rem",
-                    justifyContent: "right",
-                  }}
-                />
-              </div>
-              {/* Pagination END */}
-            
+            {/* Pagination */}
+            <div className="pagination-style-p-inventory">
+              <Pagination
+                count={pageCount}
+                page={page}
+                onChange={handlePageChange}
+                className="pagination-style"
+                style={{
+                  display: "flex",
+                  // padding: "1rem",
+                  justifyContent: "right",
+                }}
+              />
+            </div>
+            {/* Pagination END */}
           </div>
         </div>
       </div>

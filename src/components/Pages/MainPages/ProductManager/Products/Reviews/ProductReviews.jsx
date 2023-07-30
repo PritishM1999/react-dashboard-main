@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BrandImage from "../../../../../../assets/products/product-bottle.jpg";
 import "./ProductReviews.css";
 import { AiFillStar } from "react-icons/ai";
+import HomeIcon from "@mui/icons-material/Home";
 
 import {
   MoreVertOutlined,
@@ -30,6 +31,10 @@ import {
 } from "@mui/material";
 
 const ProductReiews = () => {
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
   function createData(
     srNo,
     title,
@@ -182,14 +187,36 @@ const ProductReiews = () => {
   };
 
   return (
-    <div className="card">
-      <div className="card-header">
-        <h3 className="card-title">Product Reviews</h3>
+    <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - Product Reviews
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
       </div>
-      <div className="main-body2">
-        <div className="">
-          <div className="BrandsTable">
-            
+      <br />
+      <div className="card">
+        <div className="card-header">
+          <h3 className="card-title">Product Reviews</h3>
+        </div>
+        <div className="main-body2">
+          <div className="">
+            <div className="BrandsTable">
               {/* Search and Nos */}
               <div className="searchAndNosBrands">
                 <div className="nos">
@@ -207,7 +234,10 @@ const ProductReiews = () => {
                 </div>
                 <div className="search-in-table">
                   <OutlinedInput
-                  sx={{ '& legend': { display: 'none' }, '& fieldset': { top: 0 },}} 
+                    sx={{
+                      "& legend": { display: "none" },
+                      "& fieldset": { top: 0 },
+                    }}
                     id="outlined-adornment-weight"
                     onChange={handleSearchChange}
                     value={searchText}
@@ -221,90 +251,92 @@ const ProductReiews = () => {
 
               {/* Table */}
               <TableContainer component={Paper} style={{ boxShadow: "gray" }}>
-              <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Sr.No.
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Product
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Rating
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Customer
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Comment
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Published
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Action
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {displayedRows.map((row, index) => (
-                    <TableRow
-                      key={index}
-                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                    >
-                      <TableCell component="th" scope="row" align="center">
-                        {row.srNo}
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Sr.No.
                       </TableCell>
-                      <TableCell align="center">
-                        <div className="blog-img">
-                          <img src={BrandImage} alt="Blog" />
-                        </div>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Product
                       </TableCell>
-                      <TableCell align="center">
-                        {row.srNo}
-                        <span className="star-icon">
-                          <AiFillStar />
-                        </span>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Rating
                       </TableCell>
-                      <TableCell align="center">{row.title}</TableCell>
-                      <TableCell align="center">{row.category}</TableCell>
-                      <TableCell align="center">
-                        <FormControlLabel
-                          control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
-                        />
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Customer
                       </TableCell>
-                      <TableCell align="center">
-                        <IconButton
-                          onClick={(event) => handleMenuOpen(event, row.srNo)}
-                          size="small"
-                        >
-                          <MoreVertOutlined />
-                        </IconButton>
-                        <Menu
-                          anchorEl={anchorEl}
-                          open={openMenuId === row.srNo}
-                          onClose={handleMenuClose}
-                          PaperProps={{
-                            style: {
-                              maxHeight: 120,
-                            },
-                          }}
-                        >
-                          <MenuItem onClick={handleMenuClose}>
-                            <EditOutlined sx={{ marginRight: 1 }} />
-                            Edit
-                          </MenuItem>
-                          <MenuItem onClick={handleMenuClose}>
-                            <DeleteOutlined sx={{ marginRight: 1 }} />
-                            Delete
-                          </MenuItem>
-                        </Menu>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Comment
+                      </TableCell>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Published
+                      </TableCell>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Action
                       </TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+                  </TableHead>
+                  <TableBody>
+                    {displayedRows.map((row, index) => (
+                      <TableRow
+                        key={index}
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}
+                      >
+                        <TableCell component="th" scope="row" align="left">
+                          {row.srNo}
+                        </TableCell>
+                        <TableCell align="left">
+                          <div className="blog-img">
+                            <img src={BrandImage} alt="Blog" />
+                          </div>
+                        </TableCell>
+                        <TableCell align="left">
+                          {row.srNo}
+                          <span className="star-icon">
+                            <AiFillStar />
+                          </span>
+                        </TableCell>
+                        <TableCell align="left">{row.title}</TableCell>
+                        <TableCell align="left">{row.category}</TableCell>
+                        <TableCell align="left">
+                          <FormControlLabel
+                            control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+                          />
+                        </TableCell>
+                        <TableCell align="left">
+                          <IconButton
+                            onClick={(event) => handleMenuOpen(event, row.srNo)}
+                            size="small"
+                          >
+                            <MoreVertOutlined />
+                          </IconButton>
+                          <Menu
+                            anchorEl={anchorEl}
+                            open={openMenuId === row.srNo}
+                            onClose={handleMenuClose}
+                            PaperProps={{
+                              style: {
+                                maxHeight: 120,
+                              },
+                            }}
+                          >
+                            <MenuItem onClick={handleMenuClose}>
+                              <EditOutlined sx={{ marginRight: 1 }} />
+                              Edit
+                            </MenuItem>
+                            <MenuItem onClick={handleMenuClose}>
+                              <DeleteOutlined sx={{ marginRight: 1 }} />
+                              Delete
+                            </MenuItem>
+                          </Menu>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
               </TableContainer>
               {/* Table END*/}
               {/* Pagination */}
@@ -320,11 +352,11 @@ const ProductReiews = () => {
                 }}
               />
               {/* Pagination End*/}
-            
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

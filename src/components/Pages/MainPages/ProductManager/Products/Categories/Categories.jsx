@@ -30,10 +30,17 @@ import {
 } from "@mui/icons-material";
 import ToggleOffOutlinedIcon from "@mui/icons-material/ToggleOffOutlined";
 import FunctionPopup from "./FunctionPopup";
+import HomeIcon from "@mui/icons-material/Home";
+
 const Categories = () => {
   function createData(srNo, name, expdate, Supplier) {
     return { srNo, name, expdate, Supplier };
   }
+
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
 
   const rows = [
     createData(
@@ -68,7 +75,6 @@ const Categories = () => {
     setOpenFunctionPopup(true);
     handleMenuClose();
   };
-
 
   const handleSearchChange = (event) => {
     setSearchText(event.target.value);
@@ -188,11 +194,33 @@ const Categories = () => {
 
   return (
     <>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - Categories
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div className="card">
         <div className="card-header">
           <h3 className="card-title">All Categories</h3>
           <div className="copy-button">
-            <Link to="/testDashboard/ProductManager/Products/add-categories">
+            <Link to="/admin/ProductManager/Products/add-categories">
               <Button variant="contained">Add New</Button>
             </Link>
           </div>
@@ -241,39 +269,39 @@ const Categories = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     <Checkbox
                       checked={selectedRows.length === displayedRows.length}
                       onChange={handleSelectAll}
                     />
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Category Name
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Category Code / HSN Code
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Parent
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Thumbnail
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Banner
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Status
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Action
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row) => (
                   <TableRow key={row.srNo}>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <Checkbox
                         checked={selectedRows.includes(row.srNo)}
                         onChange={(event) =>
@@ -281,25 +309,25 @@ const Categories = () => {
                         }
                       />
                     </TableCell>
-                    <TableCell align="center">{row.name}</TableCell>
-                    <TableCell align="center">{row.expdate}</TableCell>
-                    <TableCell align="center">{row.Supplier}</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.expdate}</TableCell>
+                    <TableCell align="left">{row.Supplier}</TableCell>
+                    <TableCell align="left">
                       <div className="blog-img">
                         <img src={ProductImage} alt="ProductImage" />
                       </div>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <div className="blog-img">
                         <img src={ProductImage} alt="ProductImage" />
                       </div>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <FormControlLabel
                         control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
                       />
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <IconButton
                         onClick={(event) => handleMenuOpen(event, row.srNo)}
                         size="small"

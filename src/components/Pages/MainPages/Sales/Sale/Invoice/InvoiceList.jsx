@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MoreVertOutlined, DeleteOutlined } from "@mui/icons-material";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import HomeIcon from "@mui/icons-material/Home";
 import {
   Table,
   TableBody,
@@ -159,6 +160,11 @@ const InvoiceList = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenuId, setOpenMenuId] = useState(null);
 
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
+
   const handleSearchChange = (event) => {
     const searchText = event.target.value;
     setSearchText(searchText);
@@ -205,6 +211,26 @@ const InvoiceList = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>Sales - Back Order</h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div>
         <div className="card">
           <div className="card-header">
@@ -249,25 +275,25 @@ const InvoiceList = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center" style={{ fontWeight: "bold" }}>
+                    <TableCell align="left" style={{ fontWeight: "bold" }}>
                       Sr. No.
                     </TableCell>
-                    <TableCell align="center" style={{ fontWeight: "bold" }}>
+                    <TableCell align="left" style={{ fontWeight: "bold" }}>
                       Date
                     </TableCell>
-                    <TableCell align="center"  style={{ fontWeight: "bold" }}>
+                    <TableCell align="left" style={{ fontWeight: "bold" }}>
                       Invoice
                     </TableCell>
-                    <TableCell align="center" style={{ fontWeight: "bold" }}>
+                    <TableCell align="left" style={{ fontWeight: "bold" }}>
                       Order No
                     </TableCell>
-                    <TableCell align="center" style={{ fontWeight: "bold" }}>
+                    <TableCell align="left" style={{ fontWeight: "bold" }}>
                       Customer Name
                     </TableCell>
-                    <TableCell align="center" style={{ fontWeight: "bold" }}>
+                    <TableCell align="left" style={{ fontWeight: "bold" }}>
                       Amount
                     </TableCell>
-                    <TableCell align="center" style={{ fontWeight: "bold" }}>
+                    <TableCell align="left" style={{ fontWeight: "bold" }}>
                       Action
                     </TableCell>
                   </TableRow>
@@ -278,17 +304,17 @@ const InvoiceList = () => {
                       key={index}
                       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                     >
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
-                      <TableCell align="center">{row.date}</TableCell>
-                      <TableCell align="center" style={{ color: "blue" }}>
+                      <TableCell align="left">{row.date}</TableCell>
+                      <TableCell align="left" style={{ color: "blue" }}>
                         {row.invoice}
                       </TableCell>
-                      <TableCell align="center">{row.order_no}</TableCell>
-                      <TableCell align="center">{row.customer_name}</TableCell>
-                      <TableCell align="center">{row.amount}</TableCell>
-                      <TableCell align="center">
+                      <TableCell align="left">{row.order_no}</TableCell>
+                      <TableCell align="left">{row.customer_name}</TableCell>
+                      <TableCell align="left">{row.amount}</TableCell>
+                      <TableCell align="left">
                         <IconButton
                           onClick={(event) => handleMenuOpen(event, row.srNo)}
                           size="small"

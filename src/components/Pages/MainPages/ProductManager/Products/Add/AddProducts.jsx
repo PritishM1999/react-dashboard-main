@@ -21,6 +21,7 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { styled } from "@mui/material/styles";
 import "./AddProducts.css";
+import HomeIcon from "@mui/icons-material/Home";
 
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import AddBrand from "../Brand/AddBrands";
@@ -87,6 +88,11 @@ const AddProducts = () => {
   );
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
 
   const openModal = (content) => {
     setModalContent(content);
@@ -203,6 +209,28 @@ const AddProducts = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+          Product Manger - Products - Add Product
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div className="add-products-main">
         <section className="filter-section">
           <div className="filter-head-products">

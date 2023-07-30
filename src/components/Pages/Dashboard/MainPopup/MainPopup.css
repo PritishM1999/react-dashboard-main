@@ -1,0 +1,62 @@
+.popup-content3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 100%; */
+  height: auto;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 9999; /* Set a higher z-index value */
+  /* overflow: auto; */
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.button-container button {
+  margin-left: 10px;
+}
+
+.add-edit-stocks-button {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.order-entries .css-rorn0c-MuiTableContainer-root {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e2e2;
+  font-family: "Poppins", sans-serif;
+}
+
+.popup-headers-main {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem;
+}
+
+.popup-headers-main p {
+  color: rgb(105, 105, 211);
+  font-weight: 500;
+}
+
+.visible-above {
+  visibility: visible !important;
+  z-index: 1 !important;
+}
+
+.orders-container-main {
+  padding: 1rem;
+  width: 70vw;
+  height: 85vh;
+}
+
+.add-edit-stocks-button button {
+  background-color: #7356b2;
+}

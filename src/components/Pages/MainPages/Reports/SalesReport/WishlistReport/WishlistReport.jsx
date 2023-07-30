@@ -277,42 +277,42 @@ const WishlistReport = () => {
         </div>
         {/* Buttons End*/}
         <div className="main-body2">
-          
-            {/* Search and Nos */}
-            <div className="searchAndNosBlogs">
-              <div className="nos">
-                Show <span className="spaces"></span>
-                <Select
-                  value={rowsPerPage}
-                  onChange={handleRowsPerPageChange}
-                  label="Rows per page"
-                >
-                  <MenuItem value={10}>10</MenuItem>
-                  <MenuItem value={25}>25</MenuItem>
-                  <MenuItem value={50}>50</MenuItem>
-                </Select>
-                <span className="spaces"></span> entries
-              </div>
-              <div className="search-inventory">
-                <div className="search-in-table">
-                  <OutlinedInput
-                  sx={{ '& legend': { display: 'none' }, '& fieldset': { top: 0 },}} 
-                    value={searchText}
-                    onChange={handleSearchChange}
-                    id="outlined-adornment-weight"
-                    endAdornment={
-                      <InputAdornment position="start">
-                        Search...
-                      </InputAdornment>
-                    }
-                  />
-                </div>
+          {/* Search and Nos */}
+          <div className="searchAndNosBlogs">
+            <div className="nos">
+              Show <span className="spaces"></span>
+              <Select
+                value={rowsPerPage}
+                onChange={handleRowsPerPageChange}
+                label="Rows per page"
+              >
+                <MenuItem value={10}>10</MenuItem>
+                <MenuItem value={25}>25</MenuItem>
+                <MenuItem value={50}>50</MenuItem>
+              </Select>
+              <span className="spaces"></span> entries
+            </div>
+            <div className="search-inventory">
+              <div className="search-in-table">
+                <OutlinedInput
+                  sx={{
+                    "& legend": { display: "none" },
+                    "& fieldset": { top: 0 },
+                  }}
+                  value={searchText}
+                  onChange={handleSearchChange}
+                  id="outlined-adornment-weight"
+                  endAdornment={
+                    <InputAdornment position="start">Search...</InputAdornment>
+                  }
+                />
               </div>
             </div>
-            {/* Search and Nos END */}
+          </div>
+          {/* Search and Nos END */}
 
-            {/* Table */}
-            <TableContainer
+          {/* Table */}
+          <TableContainer
             component={Paper}
             style={{ boxShadow: "none" }}
             id="tableContainer"
@@ -320,58 +320,57 @@ const WishlistReport = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     #
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Date
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Customer
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Product
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Selling Price
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row, index) => (
                   <TableRow key={index}>
-                    <TableCell component="th" scope="row" align="center">
+                    <TableCell component="th" scope="row" align="left">
                       {row.srNo}
                     </TableCell>
-                    <TableCell align="center">{row.StockUpdateOn}</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">{row.StockUpdateOn}</TableCell>
+                    <TableCell align="left">
                       User Name <br />
                       (useremail@gmail.com)
                     </TableCell>
-                    <TableCell align="center">{row.ProcutDesc}</TableCell>
-                    <TableCell align="center">$11.1</TableCell>
+                    <TableCell align="left">{row.ProcutDesc}</TableCell>
+                    <TableCell align="left">$11.1</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
-            </TableContainer>
-            {/* Table End */}
+          </TableContainer>
+          {/* Table End */}
 
-            {/* Pagination */}
-            <div className="pagination-style-p-inventory">
-              <Pagination
-                count={pageCount}
-                page={page}
-                onChange={handlePageChange}
-                className="pagination-style"
-                style={{
-                  display: "flex",
-                  justifyContent: "right",
-                }}
-              />
-            </div>
-            {/* Pagination END */}
-          
+          {/* Pagination */}
+          <div className="pagination-style-p-inventory">
+            <Pagination
+              count={pageCount}
+              page={page}
+              onChange={handlePageChange}
+              className="pagination-style"
+              style={{
+                display: "flex",
+                justifyContent: "right",
+              }}
+            />
+          </div>
+          {/* Pagination END */}
         </div>
       </div>
       {/* Popup */}

@@ -181,7 +181,7 @@ const ViewAndUpdateStatus = () => {
           {/* Buttons */}
           <div className="tabs-butons">
             <Button variant="contained">Details</Button>
-            <Link to="/testDashboard/Admin/view-invoice-details">
+            <Link to="/admin/Admin/view-invoice-details">
               <Button variant="contained">Invoice</Button>
             </Link>
             <Button variant="contained">Status</Button>

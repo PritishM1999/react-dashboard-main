@@ -183,7 +183,7 @@ const ListEmployees = () => {
         <div className="card-header">
           <h3 className="card-title">All Categories</h3>
           <div className="copy-button">
-            <Link to="/testDashboard/ProductManager/Products/add-categories">
+            <Link to="/admin/ProductManager/Products/add-categories">
               <Button variant="contained">Add New Staff</Button>
             </Link>
           </div>
@@ -232,39 +232,39 @@ const ListEmployees = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     <Checkbox
                       checked={selectedRows.length === displayedRows.length}
                       onChange={handleSelectAll}
                     />
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Employee Code
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Name
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Email
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     User Role
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Login Allow
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Status
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Action
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row) => (
                   <TableRow key={row.srNo}>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <Checkbox
                         checked={selectedRows.includes(row.srNo)}
                         onChange={(event) =>
@@ -272,24 +272,24 @@ const ListEmployees = () => {
                         }
                       />
                     </TableCell>
-                    <TableCell align="center">EMP-001</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">EMP-001</TableCell>
+                    <TableCell align="left">
                       Admin <br />
                       (Senior)
                     </TableCell>
-                    <TableCell align="center">admin@example.com</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">admin@example.com</TableCell>
+                    <TableCell align="left">
                       <span className="user-role">Super Admin</span>
                     </TableCell>{" "}
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <FormControlLabel
                         control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
                       />
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <span className="status-active">Active</span>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <IconButton
                         onClick={(event) => handleMenuOpen(event, row.srNo)}
                         size="small"

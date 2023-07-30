@@ -9,9 +9,23 @@
   border: none rgba(224, 224, 224, 0.596);
 }
 
+@media only screen and (max-width: 768px) {
+  .chart-bg {
+    margin-right: 25px;
+  }
+
+  .chart-container {
+    width: 95%;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .chart-bg {
     margin-right: 25px;
+  }
+
+  .chart-container {
+    width: 90%;
   }
 }
 

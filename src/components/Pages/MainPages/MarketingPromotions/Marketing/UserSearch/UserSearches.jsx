@@ -284,22 +284,22 @@ const UserSearches = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Sr. No.
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>
                       Product Name
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>User</TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Number of searches
                     </TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody align="center">
+                <TableBody align="left">
                   {displayedRows.map((row, index) => (
                     <TableRow key={index}>
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
                       <TableCell>
@@ -312,7 +312,7 @@ const UserSearches = () => {
                         {row.category} <br />
                         users@gmail.com
                       </TableCell>
-                      <TableCell align="center">7</TableCell>
+                      <TableCell align="left">7</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -344,7 +344,7 @@ const UserSearches = () => {
         <Dialog open={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
           <DialogTitle>Copied to Clipboard</DialogTitle>
           <DialogContent>
-            <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "left" }}>
               <p>{`${linesCopied} lines copied to clipboard`}</p>
             </div>
           </DialogContent>

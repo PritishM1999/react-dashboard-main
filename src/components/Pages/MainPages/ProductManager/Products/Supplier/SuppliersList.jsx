@@ -27,11 +27,17 @@ import {
   EditOutlined,
   DeleteOutlined,
 } from "@mui/icons-material";
+import HomeIcon from "@mui/icons-material/Home";
 
 const Suppliers = () => {
   function createData(srNo, name, expdate, Supplier) {
     return { srNo, name, expdate, Supplier };
   }
+
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
 
   const rows = [
     createData(1, "Sample Product Nmae 180 caps", "Jul 13 2023", "777-666-555"),
@@ -164,11 +170,33 @@ const Suppliers = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - All Suppliers
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div className="card">
         <div className="card-header">
           <h3 className="card-title">All Suppliers</h3>
           <div className="copy-button">
-            <Link to="/testDashboard/ProductManager/Products/add-supplierslist">
+            <Link to="/admin/ProductManager/Products/add-supplierslist">
               <Button variant="contained">Add New</Button>
             </Link>
           </div>
@@ -217,36 +245,36 @@ const Suppliers = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     <Checkbox
                       checked={selectedRows.length === displayedRows.length}
                       onChange={handleSelectAll}
                     />
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Registered On
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Name
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Phone
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Address
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Status
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Action
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row) => (
                   <TableRow key={row.srNo}>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <Checkbox
                         checked={selectedRows.includes(row.srNo)}
                         onChange={(event) =>
@@ -254,17 +282,17 @@ const Suppliers = () => {
                         }
                       />
                     </TableCell>
-                    <TableCell align="center">{row.expdate}</TableCell>
+                    <TableCell align="left">{row.expdate}</TableCell>
 
-                    <TableCell align="center">{row.name}</TableCell>
-                    <TableCell align="center">{row.Supplier}</TableCell>
-                    <TableCell align="center"></TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.Supplier}</TableCell>
+                    <TableCell align="left"></TableCell>
+                    <TableCell align="left">
                       <FormControlLabel
                         control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
                       />
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <IconButton
                         onClick={(event) => handleMenuOpen(event, row.srNo)}
                         size="small"

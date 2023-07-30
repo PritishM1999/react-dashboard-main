@@ -121,7 +121,7 @@ const DeletedCategories = () => {
         <div className="card-header">
           <h3 className="card-title">Deleted Categories</h3>
           <div className="copy-button">
-            <Link to="/testDashboard/ProductManager/Products/add-categories">
+            <Link to="/admin/ProductManager/Products/add-categories">
               <Button variant="contained">Add New</Button>
             </Link>
           </div>
@@ -170,36 +170,36 @@ const DeletedCategories = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     <Checkbox
                       checked={selectedRows.length === displayedRows.length}
                       onChange={handleSelectAll}
                     />
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Category Name
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Category Code / HSN Code
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Parent
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Thumbnail
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Status
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Action
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row) => (
                   <TableRow key={row.srNo}>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <Checkbox
                         checked={selectedRows.includes(row.srNo)}
                         onChange={(event) =>
@@ -207,16 +207,16 @@ const DeletedCategories = () => {
                         }
                       />
                     </TableCell>
-                    <TableCell align="center">{row.name}</TableCell>
-                    <TableCell align="center">{row.expdate}</TableCell>
-                    <TableCell align="center">{row.Supplier}</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.expdate}</TableCell>
+                    <TableCell align="left">{row.Supplier}</TableCell>
+                    <TableCell align="left">
                       <div className="blog-img">
                         <img src={ProductImage} alt="ProductImage" />
                       </div>
                     </TableCell>
-                    <TableCell align="center">--</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">--</TableCell>
+                    <TableCell align="left">
                       <IconButton
                         onClick={(event) => handleMenuOpen(event, row.srNo)}
                         size="small"

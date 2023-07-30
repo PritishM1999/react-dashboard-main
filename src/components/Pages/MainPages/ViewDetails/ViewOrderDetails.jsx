@@ -52,10 +52,10 @@ const ViewOrderDetails = () => {
           {/* Buttons */}
           <div className="tabs-butons">
             <Button variant="contained">Details</Button>
-            <Link to="/testDashboard/Admin/view-invoice-details">
+            <Link to="/admin/Admin/view-invoice-details">
               <Button variant="contained">Invoice</Button>
             </Link>
-            <Link to="/testDashboard/Admin/view-and-update-status">
+            <Link to="/admin/Admin/view-and-update-status">
               <Button variant="contained">Status</Button>
             </Link>
             {/* <Button variant="contained">Notes</Button> */}

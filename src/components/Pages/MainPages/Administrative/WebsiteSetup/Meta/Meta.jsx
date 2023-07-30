@@ -146,7 +146,7 @@ const Meta = () => {
             {/* Buttons */}
             <div className="tabs-butons">
               <Button variant="contained">All</Button>
-              <Link to="/testDashboard/Administrative/Website-Setup/add-meta">
+              <Link to="/admin/Administrative/Website-Setup/add-meta">
                 <Button variant="contained">Add Meta</Button>
               </Link>
               <Button variant="contained">Trash</Button>
@@ -199,7 +199,7 @@ const Meta = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Sr. No.
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>Page</TableCell>
@@ -213,10 +213,10 @@ const Meta = () => {
                     <TableCell style={{ fontWeight: "bold" }}>Action</TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody align="center">
+                <TableBody align="left">
                   {displayedRows.map((row, index) => (
                     <TableRow key={index}>
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
                       <TableCell>Index</TableCell>

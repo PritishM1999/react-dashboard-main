@@ -245,7 +245,7 @@ const AllSubscribers = () => {
             <h3>All Subscriber</h3>
             {/* Buttons */}
             <div className="tabs-butons">
-              <Link to="/testDashboard/Marketing-Promotions/product-wishlist/add-to-products">
+              <Link to="/admin/Marketing-Promotions/product-wishlist/add-to-products">
                 <Button variant="contained">All</Button>
               </Link>
               <Button variant="contained">Trash</Button>
@@ -310,29 +310,29 @@ const AllSubscribers = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Sr. No.
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Email
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Date
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Action
                     </TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody align="center">
+                <TableBody align="left">
                   {displayedRows.map((row, index) => (
                     <TableRow key={index}>
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
-                      <TableCell align="center">users@gmail.com</TableCell>
-                      <TableCell align="center">{row.StockUpdateOn}</TableCell>
-                      <TableCell align="center">
+                      <TableCell align="left">users@gmail.com</TableCell>
+                      <TableCell align="left">{row.StockUpdateOn}</TableCell>
+                      <TableCell align="left">
                         <IconButton
                           onClick={(event) => handleMenuOpen(event, row.srNo)}
                           size="small"

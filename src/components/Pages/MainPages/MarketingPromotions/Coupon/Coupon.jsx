@@ -303,7 +303,7 @@ const Coupons = () => {
             <div className="tabs-buttons">
               <Grid container spacing={2}>
                 <Grid item>
-                  <Link to="/testDashboard/Marketing-Promotions/add-coupons">
+                  <Link to="/admin/Marketing-Promotions/add-coupons">
                     <Button variant="contained">Add New Coupons</Button>
                   </Link>
                 </Grid>
@@ -386,7 +386,7 @@ const Coupons = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Sr. No.
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>Code</TableCell>
@@ -402,10 +402,10 @@ const Coupons = () => {
                     <TableCell style={{ fontWeight: "bold" }}>Action</TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody align="center">
+                <TableBody align="left">
                   {displayedRows.map((row, index) => (
                     <TableRow key={index}>
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
                       <TableCell>
@@ -418,7 +418,7 @@ const Coupons = () => {
                       <TableCell>
                         <span className="status-active">Active</span>
                       </TableCell>
-                      <TableCell align="center">
+                      <TableCell align="left">
                         <FormControlLabel
                           control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
                         />

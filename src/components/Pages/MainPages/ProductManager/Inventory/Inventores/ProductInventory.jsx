@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ProductImage from "../../../../../../assets/blog-sample.png";
+import ProductImage from "../../../../../../assets/products/sample-product-bone.png";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 import {
@@ -28,6 +28,7 @@ import {
   DialogContent,
 } from "@mui/material";
 import { saveAs } from "file-saver";
+import HomeIcon from "@mui/icons-material/Home";
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
@@ -108,6 +109,11 @@ const ProductInventory = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [linesCopied, setLinesCopied] = useState(0);
   const [showStockEditPopup, setShowStockEditPopup] = useState(false);
+
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
 
   const handleSearchChange = (event) => {
     setSearchText(event.target.value);
@@ -244,6 +250,28 @@ const ProductInventory = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Inventory - Product Inventory
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div>
         <div className="card">
           <div className="card-header">
@@ -309,14 +337,14 @@ const ProductInventory = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Sr. No.
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>
                       Stock Update On
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>
-                      Product Description
+                      Product
                     </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>
                       Category
@@ -331,13 +359,16 @@ const ProductInventory = () => {
                     <TableCell style={{ fontWeight: "bold" }}>
                       Quantity
                     </TableCell>
+                    <TableCell style={{ fontWeight: "bold" }}>
+                      Expiry date
+                    </TableCell>
                     <TableCell style={{ fontWeight: "bold" }}>Action</TableCell>
                   </TableRow>
                 </TableHead>
-                <TableBody align="center">
+                <TableBody align="left">
                   {displayedRows.map((row, index) => (
                     <TableRow key={index}>
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
                       <TableCell>{row.StockUpdateOn}</TableCell>
@@ -352,6 +383,7 @@ const ProductInventory = () => {
                       <TableCell>{row.Supplier}</TableCell>
                       <TableCell>{row.Price}</TableCell>
                       <TableCell>{row.Quantity}</TableCell>
+                      <TableCell>12 Jul, 2024</TableCell>
                       <TableCell>
                         <IconButton
                           onClick={(event) => handleMenuOpen(event, row.srNo)}

@@ -24,6 +24,7 @@ import {
   Menu,
   InputAdornment,
 } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
 
 const Units = () => {
   function createData(
@@ -82,6 +83,10 @@ const Units = () => {
     setStatusFilter("all");
     setPage(1);
   };
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
 
   const handleRowsPerPageChange = (event) => {
     setRowsPerPage(event.target.value);
@@ -122,12 +127,36 @@ const Units = () => {
   };
 
   return (
+    <>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - All Units
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
+
     <div className="card">
       <div className="card-header">
         <h3 className="card-title">All your units</h3>
         {/* Buttons */}
         <div className="tabs-butons">
-          <Link to="/testDashboard/ProductManager/Products/add-unit">
+          <Link to="/admin/ProductManager/Products/add-unit">
             <Button variant="contained">Add New</Button>
           </Link>
         </div>
@@ -173,16 +202,16 @@ const Units = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Name
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Short name
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Allow decimal
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Action
                     </TableCell>
                   </TableRow>
@@ -193,13 +222,13 @@ const Units = () => {
                       key={index}
                       sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                     >
-                      <TableCell component="th" scope="row" align="center">
+                      <TableCell component="th" scope="row" align="left">
                         {row.srNo}
                       </TableCell>
-                      <TableCell align="center">{row.title}</TableCell>
-                      <TableCell align="center">{row.category}</TableCell>
+                      <TableCell align="left">{row.title}</TableCell>
+                      <TableCell align="left">{row.category}</TableCell>
 
-                      <TableCell align="center">
+                      <TableCell align="left">
                         <IconButton
                           onClick={(event) => handleMenuOpen(event, row.srNo)}
                           size="small"
@@ -249,6 +278,7 @@ const Units = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

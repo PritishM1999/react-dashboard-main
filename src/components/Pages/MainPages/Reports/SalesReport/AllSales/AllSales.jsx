@@ -296,7 +296,10 @@ const AllSales = () => {
             <div className="search-inventory">
               <div className="search-in-table">
                 <OutlinedInput
-                sx={{ '& legend': { display: 'none' }, '& fieldset': { top: 0 },}} 
+                  sx={{
+                    "& legend": { display: "none" },
+                    "& fieldset": { top: 0 },
+                  }}
                   value={searchText}
                   onChange={handleSearchChange}
                   id="outlined-adornment-weight"
@@ -318,61 +321,61 @@ const AllSales = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     #
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Sales Date
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Invoice Id
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     User
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Product
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Sub Total
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Discount
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Grand Total
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Paid Amount
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Receipt By
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Card Type
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row, index) => (
                   <TableRow key={index}>
-                    <TableCell component="th" scope="row" align="center">
+                    <TableCell component="th" scope="row" align="left">
                       {row.srNo}
                     </TableCell>
-                    <TableCell align="center">{row.StockUpdateOn}</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">{row.StockUpdateOn}</TableCell>
+                    <TableCell align="left">
                       <Link>INV-84385453</Link>
                     </TableCell>
-                    <TableCell align="center">User Name</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">User Name</TableCell>
+                    <TableCell align="left">
                       <span className="test-orange">{row.Brand}</span>
                     </TableCell>
-                    <TableCell align="center">{row.ProcutDesc}</TableCell>
-                    <TableCell align="center">$11.1</TableCell>
-                    <TableCell align="center">$0</TableCell>
-                    <TableCell align="center">$11.1</TableCell>
-                    <TableCell align="center">Admin</TableCell>
-                    <TableCell align="center">Debit Card</TableCell>
+                    <TableCell align="left">{row.ProcutDesc}</TableCell>
+                    <TableCell align="left">$11.1</TableCell>
+                    <TableCell align="left">$0</TableCell>
+                    <TableCell align="left">$11.1</TableCell>
+                    <TableCell align="left">Admin</TableCell>
+                    <TableCell align="left">Debit Card</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

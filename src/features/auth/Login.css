@@ -1,0 +1,85 @@
+.form-control-login {
+  height: 3rem;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: black;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  border: 1px solid #7356b2;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.m-login {
+  margin-top: 5rem;
+}
+
+.bg-gary {
+  background: #f8f9fa;
+  padding: 40px;
+  border: 4px inset #7356b2;
+  border-radius: 2rem;
+  box-shadow: none;
+  width: 40%;
+  /* box-shadow: rgb(0 0 0 / 39%) 0px 25px 20px -20px; */
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.login-text {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #5f5f5f;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.para-text {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #5f5f5f;
+  font-family: poppins;
+}
+
+@media only screen and (max-width: 1200px) {
+  .bg-gary {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bg-gary {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .bg-gary {
+    width: 80%;
+  }
+}
+
+/* @media only screen and (max-width: 375px) {
+    .main-container {
+      border-radius: 10px 10px;
+      padding: 10px 0px 10px 25px;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    .main-container {
+      border-radius: 10px 10px;
+      padding: 10px 0px 10px 25px;
+    }
+  } */

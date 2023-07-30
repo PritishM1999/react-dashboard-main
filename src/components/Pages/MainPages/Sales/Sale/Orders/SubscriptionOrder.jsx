@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import StaffNotePopup from "./StaffNotePopup";
-
 import {
   Typography,
   Grid,
@@ -17,12 +15,12 @@ import {
   TableHead,
   TableRow,
   Collapse,
-  OutlinedInput,
-  InputAdornment,
   Pagination,
   Button,
   IconButton,
   Menu,
+  OutlinedInput,
+  InputAdornment,
   InputLabel,
 } from "@mui/material";
 import "./Allorders.css";
@@ -31,16 +29,19 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import {
   MoreVertOutlined,
-  EditOutlined,
+  // EditOutlined,
   DeleteOutlined,
 } from "@mui/icons-material";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-import ReplayIcon from "@mui/icons-material/Replay";
+// import ReplayIcon from "@mui/icons-material/Replay";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import PrintIcon from "@mui/icons-material/Print";
+// import PrintIcon from "@mui/icons-material/Print";
+import ProductImg from "../../../../../../assets/products/spray-product.jpg";
+import HomeIcon from "@mui/icons-material/Home";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 const { RangePicker } = DatePicker;
 
@@ -52,15 +53,19 @@ const SubsOrder = () => {
   const [subscriptionChecked, setSubscriptionChecked] = useState(false);
   const [selectedDates, setSelectedDates] = useState([]);
 
+  const [showStaffNotePopup, setShowStaffNotePopup] = useState(false);
+  const [staffNote, setStaffNote] = useState("");
+
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
+
   const processDatesArray = (datesArray) => {
     if (datesArray.length !== 2) {
       console.error("Invalid array length. Expected 2 dates.");
       return;
     }
-
-    // const startDate = datesArray[0].$d;
-    // const endDate = datesArray[1].$d;
-
     const startDate = moment(datesArray[0].$d).format("DD-MM-YYYY");
     const endDate = moment(datesArray[1].$d).format("DD-MM-YYYY");
 
@@ -95,7 +100,6 @@ const SubsOrder = () => {
   const [page, setPage] = useState(1);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenuId, setOpenMenuId] = useState(null);
-  const [showStaffNotePopup, setShowStaffNotePopup] = useState(false);
 
   const handlePageChange = (event) => {
     setRowsPerPage(event.target.value);
@@ -113,6 +117,7 @@ const SubsOrder = () => {
   };
 
   const pageCount = 5; // Replace with the actual number of pages
+
   const shippingOptions = [
     { value: "", label: "Select One" },
     { value: "all", label: "All" },
@@ -152,6 +157,26 @@ const SubsOrder = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>Sales - Subscription Orders</h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div>
         <div className="all-orders">
           <section className="filter-section">
@@ -291,10 +316,10 @@ const SubsOrder = () => {
           </section>
           {/* End Filter */}
           <br />
-          <section className="orders-section">
+          <div className="orders-section">
             {/* Orders Start*/}
             <div className="order-head">
-              <Typography variant="h1">Subscription Orders</Typography>
+              <Typography variant="h1">All Orders</Typography>
 
               <div className="search-orders">
                 <div className="search-in-table">
@@ -322,7 +347,8 @@ const SubsOrder = () => {
                   <Table>
                     <TableHead>
                       <TableRow>
-                        <TableCell>Inv. Details</TableCell>
+                        <TableCell></TableCell>
+                        <TableCell>Inv. No.</TableCell>
                         <TableCell>Date</TableCell>
                         <TableCell>Order Details</TableCell>
                         <TableCell>Total Items</TableCell>
@@ -332,18 +358,18 @@ const SubsOrder = () => {
                         <TableCell>Shipping Status</TableCell>
                         <TableCell>Pay Status</TableCell>
                         <TableCell>Source</TableCell>
-                        <TableCell>Agent</TableCell>
-                        <TableCell>Is Return</TableCell>
-                        <TableCell>Action</TableCell>
+                        <TableCell>
+                          <SettingsIcon />
+                        </TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
                       <TableRow>
                         <TableCell>
-                          <Button
+                          <IconButton
                             onClick={() => handleRowClick(1)}
                             variant="outlined"
-                            size="small"
+                            // size="small"
                           >
                             {expandedRow === 1 ? (
                               <i>
@@ -354,18 +380,27 @@ const SubsOrder = () => {
                                 <FaAngleDown />
                               </span>
                             )}
-                          </Button>
+                          </IconButton>
                         </TableCell>
                         <TableCell>
                           <Typography variant="body1">
-                            2/26/2023
-                            <br />
-                            1:20PM
+                            <Link to="">INV-56893386</Link>
                           </Typography>
                         </TableCell>
                         <TableCell>
                           <Typography variant="body1">
-                            <Link to="">6900</Link>
+                            Jul 26, 2023
+                            <br />
+                            1:20 pm
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography variant="body1">
+                            Order
+                            <br />
+                            (Deliver to address)
+                            <br />
+                            <Link to="">SNA24421690312241</Link>
                             <br />
                             <span>TRA016275485</span>
                           </Typography>
@@ -376,16 +411,23 @@ const SubsOrder = () => {
                         <TableCell>
                           <Typography variant="body1">
                             <Link to="" className="text-dark">
-                              Rahul
+                              test ecw
                             </Link>
                             <br />
-                            <small>Rahul@gmail.com</small>
+                            <small>aakash@eclinicalworks.com</small>
                             <br />
-                            <small>+91 9918568401</small>
+                            <small>4417058080</small>
+                            <br />
+                            <small>TES638840</small>
+                            <br />
+                            <small>Bermuda</small>
+                            <br />
                           </Typography>
                         </TableCell>
                         <TableCell>
-                          <Typography variant="body1">$123.3</Typography>
+                          <Typography variant="body1">
+                            $64 (+ S.C: $0) (- Dis: $0)
+                          </Typography>
                         </TableCell>
                         <TableCell>
                           <Typography variant="body1">
@@ -400,9 +442,8 @@ const SubsOrder = () => {
                         <TableCell>
                           <span className="pending">Pending</span>
                         </TableCell>
-                        <TableCell>Admin</TableCell>
-                        <TableCell>Mohit</TableCell>
-                        <TableCell>NO</TableCell>
+                        <TableCell>Cash</TableCell>
+                        {/* <TableCell>NO</TableCell> */}
                         <TableCell>
                           <IconButton
                             onClick={(event) => handleMenuOpen(event, 1)}
@@ -420,58 +461,105 @@ const SubsOrder = () => {
                               },
                             }}
                           >
-                            <MenuItem onClick={handleMenuClose}>
+                            {/* <MenuItem onClick={handleMenuClose}>
                               <EditOutlined sx={{ marginRight: 1 }} />
                               Edit
+                            </MenuItem> */}
+
+                            <MenuItem aria-label="View order details">
+                              <Link
+                                to="/admin/Admin/view-order-details"
+                                onClick={handleMenuClose}
+                                style={{ color: "black" }}
+                              >
+                                <small>
+                                  <VisibilityOutlinedIcon
+                                    sx={{ marginRight: 1 }}
+                                  />
+                                  View
+                                </small>
+                              </Link>
+                            </MenuItem>
+
+                            <MenuItem onClick={handleMenuClose}>
+                              <small>
+                                <NotificationsActiveIcon
+                                  sx={{ marginRight: 1 }}
+                                />
+                                Review Alert
+                              </small>
                             </MenuItem>
                             <MenuItem onClick={handleMenuClose}>
-                              <VisibilityOffIcon sx={{ marginRight: 1 }} />
-                              View
+                              <small>
+                                <DeleteOutlined sx={{ marginRight: 1 }} />
+                                Delete
+                              </small>
                             </MenuItem>
-                            <MenuItem onClick={handleMenuClose}>
-                              <NotificationsActiveIcon
-                                sx={{ marginRight: 1 }}
-                              />
-                              Review Alert
-                            </MenuItem>
-                            <MenuItem onClick={handleMenuClose}>
-                              <DeleteOutlined sx={{ marginRight: 1 }} />
-                              Delete
-                            </MenuItem>
-                            <MenuItem onClick={handleMenuClose}>
+                            {/* <MenuItem onClick={handleMenuClose}>
                               <ReplayIcon sx={{ marginRight: 1 }} />
                               Return Sales order
-                            </MenuItem>
+                            </MenuItem> */}
                             <MenuItem
                               onClick={() => {
                                 handleMenuClose();
                                 setShowStaffNotePopup(true);
                               }}
                             >
-                              <EditNoteIcon sx={{ marginRight: 1 }} />
-                              Staff Note
+                              <small>
+                                <EditNoteIcon sx={{ marginRight: 1 }} />
+                                Staff Note
+                              </small>
                             </MenuItem>
+
                             <MenuItem onClick={handleMenuClose}>
-                              <MailOutlineIcon sx={{ marginRight: 1 }} />
-                              Mail
+                              <small>
+                                <MailOutlineIcon sx={{ marginRight: 1 }} />
+                                Mail
+                              </small>
                             </MenuItem>
-                            <MenuItem onClick={handleMenuClose}>
+                            {/* <MenuItem onClick={handleMenuClose}>
                               <PrintIcon sx={{ marginRight: 1 }} />
                               Print
-                            </MenuItem>
+                            </MenuItem> */}
                           </Menu>
+                          {/* Staff Note Popup */}
                           {showStaffNotePopup && (
-                            <StaffNotePopup
-                              onSave={(staffNote) => {
-                                // Perform any necessary action with the staff note value
-                                console.log(staffNote);
+                            <div className="popup">
+                              <div className="popup-content">
+                                <label className="popup-label">
+                                  Staff note:
+                                </label>
+                                <textarea
+                                  className="popup-textarea"
+                                  value={staffNote}
+                                  onChange={(event) =>
+                                    setStaffNote(event.target.value)
+                                  }
+                                />
+                                <div className="popup-buttons">
+                                  <button
+                                    className="popup-button"
+                                    onClick={() => {
+                                      // Perform any necessary action with the staff note value
+                                      console.log(staffNote);
 
-                                // Hide the popup
-                                setShowStaffNotePopup(false);
-                              }}
-                              onCancel={() => setShowStaffNotePopup(false)}
-                            />
+                                      // Hide the popup
+                                      setShowStaffNotePopup(false);
+                                    }}
+                                  >
+                                    Save
+                                  </button>
+                                  <button
+                                    className="popup-button"
+                                    onClick={() => setShowStaffNotePopup(false)}
+                                  >
+                                    Cancel
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
                           )}
+                          {/* Staff Note Popup end*/}
                         </TableCell>
                       </TableRow>
 
@@ -479,6 +567,7 @@ const SubsOrder = () => {
                         <TableCell
                           colSpan={12}
                           className="hiddenRow pc-padding"
+                          style={{ padding: "0px" }}
                         >
                           <Collapse
                             in={expandedRow === 1}
@@ -490,46 +579,47 @@ const SubsOrder = () => {
                                 variant="h4"
                                 className="sub-table-heading"
                               >
-                                <p>Sales Order Items</p>
+                                <p style={{ padding: "1rem", margin: "0" }}>Sales Order Items</p>
                               </Typography>
+                              {/* <hr /> */}
                               <TableContainer>
                                 <Table>
                                   <TableHead className="orders-table-head-row">
                                     <TableRow className="info">
-                                      <TableCell>Inv. No.</TableCell>
                                       <TableCell>Product Name</TableCell>
                                       <TableCell>Unit</TableCell>
-                                      <TableCell>Unit per price</TableCell>
+
                                       <TableCell>Qty</TableCell>
                                       <TableCell>Discount</TableCell>
-                                      <TableCell>Tax</TableCell>
-                                      <TableCell>Total Tax</TableCell>
-                                      <TableCell>Total</TableCell>
+                                      <TableCell>Price</TableCell>
+
                                       <TableCell>Shipping Details</TableCell>
-                                      <TableCell>Warehouse</TableCell>
+
                                       <TableCell>Seller</TableCell>
                                     </TableRow>
                                   </TableHead>
                                   <TableBody>
                                     <TableRow>
                                       <TableCell>
-                                        <Link to="">234576</Link>
-                                      </TableCell>
-                                      <TableCell>
-                                        Ultimate Edge Control Kit: Contains 1
-                                        Edge Control RX Hold & Grow & 1 Edge
-                                        Control
+                                        <img
+                                          alt="user"
+                                          src={ProductImg}
+                                          style={{
+                                            width: "40px",
+                                            height: "50px",
+                                            borderRadius: "50%",
+                                          }}
+                                        />
+                                        Ultimate Edge Control Kit
                                       </TableCell>
                                       <TableCell>Piece</TableCell>
-                                      <TableCell>PKR5,000.00</TableCell>
                                       <TableCell>1</TableCell>
-                                      <TableCell>PKR0.00(0%)</TableCell>
-                                      <TableCell>Excise Tax(8%)</TableCell>
-                                      <TableCell>PKR0.00</TableCell>
+                                      <TableCell>$00.00</TableCell>
                                       <TableCell>$55.00</TableCell>
-                                      <TableCell>--</TableCell>
-                                      <TableCell>--</TableCell>
-                                      <TableCell>Mohit</TableCell>
+                                      <TableCell>
+                                        7 North shore Road, Bermuda
+                                      </TableCell>
+                                      <TableCell>Dermal Distribution</TableCell>
                                     </TableRow>
                                   </TableBody>
                                 </Table>
@@ -557,7 +647,7 @@ const SubsOrder = () => {
                 justifyContent: "right",
               }}
             />
-          </section>
+          </div>
         </div>
         <br />
       </div>

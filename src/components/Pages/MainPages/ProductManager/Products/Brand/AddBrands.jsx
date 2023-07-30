@@ -1,6 +1,8 @@
 import React from "react";
 import { TextField, Button, InputLabel, Grid } from "@mui/material";
-import "./AddBrands.css"; // Import the CSS file for styling
+import "./AddBrands.css";
+import HomeIcon from "@mui/icons-material/Home";
+
 const AddBrand = () => {
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -8,8 +10,35 @@ const AddBrand = () => {
     console.log(file);
   };
 
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
+
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - All Brand - Add Brands
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div className="card-flow">
         <div className="card-header">
           <h3 className="card-title">Add Brand </h3>

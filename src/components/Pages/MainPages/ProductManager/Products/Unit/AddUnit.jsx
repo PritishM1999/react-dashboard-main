@@ -8,10 +8,16 @@ import {
   MenuItem,
   Checkbox,
 } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
 
 const AddUnit = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showUnitField, setShowUnitField] = useState(false);
+
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
 
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -23,6 +29,28 @@ const AddUnit = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - Add Units
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div className="card-flow">
         <div className="card-header">
           <h3 className="card-title">Add Units</h3>

@@ -1,0 +1,22 @@
+.card .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: #5e35b1;
+  }
+  
+  .card .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+    text-transform: capitalize;
+    font-size: 16px;
+  }
+  
+  .card .css-1h9z7r5-MuiButtonBase-root-MuiTab-root:hover {
+    text-decoration: none;
+    color: #5e35b1;
+  }
+  
+  .card .css-1aquho2-MuiTabs-indicator {
+    background-color: #5e35b1;
+  }
+  
+  .card .css-145v6pe-MuiButtonBase-root-MuiTabScrollButton-root.Mui-disabled {
+    width: 10px;
+  }
+  

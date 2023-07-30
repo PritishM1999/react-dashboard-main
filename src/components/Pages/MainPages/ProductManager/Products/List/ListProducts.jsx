@@ -43,6 +43,7 @@ import ProductsImage from "../../../../../../assets/products/spray-product.jpg";
 
 import { AiFillStar } from "react-icons/ai";
 import { FaCubes } from "react-icons/fa";
+import HomeIcon from "@mui/icons-material/Home";
 
 const ListOfProducts = () => {
   const [brandValue, setShippingValue] = useState("");
@@ -55,6 +56,11 @@ const ListOfProducts = () => {
     } else {
       setExpandedRow(rowId);
     }
+  };
+
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
   };
 
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -149,6 +155,28 @@ const ListOfProducts = () => {
 
   return (
     <>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - List of Products
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div>
         <div className="all-orders">
           <section className="card">

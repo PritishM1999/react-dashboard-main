@@ -32,11 +32,11 @@ const ViewInvoiceDetails = () => {
         <h4 className="card-title">Invoice</h4>
         {/* Buttons */}
         <div className="tabs-butons">
-          <Link to="/testDashboard/Admin/view-order-details">
+          <Link to="/admin/Admin/view-order-details">
             <Button variant="contained">Details</Button>
           </Link>
           <Button variant="contained">Invoice</Button>
-          <Link to="/testDashboard/Admin/view-and-update-status">
+          <Link to="/admin/Admin/view-and-update-status">
             <Button variant="contained">Status</Button>
           </Link>
           {/* <Button variant="contained">Notes</Button> */}

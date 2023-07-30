@@ -140,7 +140,7 @@ const PickupPoint = () => {
           <h3>All Pick-up Report</h3>
           {/* Buttons */}
           <div className="tabs-butons">
-            <Link to="/testDashboard/Administrative/Setup/add-pick-up-point">
+            <Link to="/admin/Administrative/Setup/add-pick-up-point">
               <Button variant="contained">Add New Pickup Point</Button>
             </Link>
           </div>
@@ -190,43 +190,43 @@ const PickupPoint = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     #
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Name
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Manager
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Location
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Phone
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Status
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Action
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row, index) => (
                   <TableRow key={index}>
-                    <TableCell component="th" scope="row" align="center">
+                    <TableCell component="th" scope="row" align="left">
                       {row.srNo}
                     </TableCell>
-                    <TableCell align="center">Shopnmac</TableCell>
-                    <TableCell align="center">Dr. Brown</TableCell>
-                    <TableCell align="center">
-                      Northshore Medical & Aesthetics Center, P.O. Box HM1839
+                    <TableCell align="left">Shopnmac</TableCell>
+                    <TableCell align="left">Dr. Brown</TableCell>
+                    <TableCell align="left">
+                      Northshore Medical & Aesthetics left, P.O. Box HM1839
                       Hamilton HMGX, Bermuda
                     </TableCell>
-                    <TableCell align="center">2935476</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">2935476</TableCell>
+                    <TableCell align="left">
                       <span className="status-active">Open</span>
                     </TableCell>
                     <TableCell>

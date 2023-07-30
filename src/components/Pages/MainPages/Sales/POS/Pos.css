@@ -87,11 +87,12 @@
 .image-card img {
   display: block;
   height: 100%;
-  max-height: 80px;
+  max-height: 85px;
   margin: 0 auto;
   text-align: center;
   object-fit: contain;
   margin-bottom: 1rem;
+  width: 85px;
 }
 
 .image-card .overlay {

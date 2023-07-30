@@ -21,7 +21,6 @@ import {
 
 import "./AllCustomers.css";
 
-
 const DeletedCustomers = () => {
   function CreateData(
     srNo,
@@ -161,7 +160,10 @@ const DeletedCustomers = () => {
             <div className="search-inventory">
               <div className="search-in-table">
                 <OutlinedInput
-                sx={{ '& legend': { display: 'none' }, '& fieldset': { top: 0 },}} 
+                  sx={{
+                    "& legend": { display: "none" },
+                    "& fieldset": { top: 0 },
+                  }}
                   value={searchText}
                   onChange={handleSearchChange}
                   id="outlined-adornment-weight"
@@ -183,41 +185,41 @@ const DeletedCustomers = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     #
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Registered On
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Name
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Email Address
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Address
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Action
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row, index) => (
                   <TableRow key={index}>
-                    <TableCell component="th" scope="row" align="center">
+                    <TableCell component="th" scope="row" align="left">
                       {row.srNo}
                     </TableCell>
-                    <TableCell align="center">{row.StockUpdateOn}</TableCell>
-                    <TableCell align="center">{row.ProcutDesc}</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">{row.StockUpdateOn}</TableCell>
+                    <TableCell align="left">{row.ProcutDesc}</TableCell>
+                    <TableCell align="left">
                       {row.category} <br />
                       {row.Supplier}
                     </TableCell>
-                    <TableCell align="center">{row.Brand}</TableCell>
+                    <TableCell align="left">{row.Brand}</TableCell>
 
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <IconButton
                         onClick={(event) => handleMenuOpen(event, row.srNo)}
                         size="small"
@@ -234,17 +236,19 @@ const DeletedCustomers = () => {
                           },
                         }}
                       >
-                          <MenuItem onClick={handleMenuClose} style={{color:"black"}}>
-                          <Link to="/testDashboard/People/GeneralCustomers/edit-customers">
-
+                        <MenuItem
+                          onClick={handleMenuClose}
+                          style={{ color: "black" }}
+                        >
+                          <Link to="/admin/People/GeneralCustomers/edit-customers">
                             <EditOutlined
                               fontSize="small"
                               style={{ marginRight: "5px" }}
                             />{" "}
                             Edit
-                            </Link>
-                          </MenuItem>
-                       
+                          </Link>
+                        </MenuItem>
+
                         <MenuItem onClick={handleMenuClose}>
                           <RestorePageOutlinedIcon
                             fontSize="small"

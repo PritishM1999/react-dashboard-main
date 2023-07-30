@@ -25,8 +25,14 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import copy from "copy-to-clipboard";
 import * as XLSX from "xlsx";
+import HomeIcon from "@mui/icons-material/Home";
 
 const ExpiredStocks = () => {
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
+  
   function createData(srNo, name, expdate, Supplier) {
     return { srNo, name, expdate, Supplier };
   }
@@ -169,6 +175,28 @@ const ExpiredStocks = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Inventory - Expired Stock
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div className="card">
         <div className="card-header">
           <h3 className="card-title">Expired Stocks</h3>
@@ -198,42 +226,42 @@ const ExpiredStocks = () => {
           {/* Popup END */}
         </div>
         <div className="main-body2">
-
-            {/* Search and Nos */}
-            <div className="searchAndNosBlogs">
-              <div className="nos">
-                Show <span className="spaces"></span>
-                <Select
-                  value={rowsPerPage}
-                  onChange={handleRowsPerPageChange}
-                  label="Rows per page"
-                >
-                  <MenuItem value={10}>10</MenuItem>
-                  <MenuItem value={25}>25</MenuItem>
-                  <MenuItem value={50}>50</MenuItem>
-                </Select>
-                <span className="spaces"></span> entries
-              </div>
-              <div className="search-inventory">
-                <div className="search-in-table">
-                  <OutlinedInput
-                  sx={{ '& legend': { display: 'none' }, '& fieldset': { top: 0 },}} 
-                    value={searchText}
-                    onChange={handleSearchChange}
-                    id="outlined-adornment-weight"
-                    endAdornment={
-                      <InputAdornment position="start">
-                        Search...
-                      </InputAdornment>
-                    }
-                  />
-                </div>
+          {/* Search and Nos */}
+          <div className="searchAndNosBlogs">
+            <div className="nos">
+              Show <span className="spaces"></span>
+              <Select
+                value={rowsPerPage}
+                onChange={handleRowsPerPageChange}
+                label="Rows per page"
+              >
+                <MenuItem value={10}>10</MenuItem>
+                <MenuItem value={25}>25</MenuItem>
+                <MenuItem value={50}>50</MenuItem>
+              </Select>
+              <span className="spaces"></span> entries
+            </div>
+            <div className="search-inventory">
+              <div className="search-in-table">
+                <OutlinedInput
+                  sx={{
+                    "& legend": { display: "none" },
+                    "& fieldset": { top: 0 },
+                  }}
+                  value={searchText}
+                  onChange={handleSearchChange}
+                  id="outlined-adornment-weight"
+                  endAdornment={
+                    <InputAdornment position="start">Search...</InputAdornment>
+                  }
+                />
               </div>
             </div>
-            {/* Search and Nos END */}
+          </div>
+          {/* Search and Nos END */}
 
-            {/* Table */}
-            <TableContainer
+          {/* Table */}
+          <TableContainer
             component={Paper}
             style={{ boxShadow: "gray" }}
             id="tableContainer"
@@ -241,30 +269,30 @@ const ExpiredStocks = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     <Checkbox
                       checked={selectedRows.length === displayedRows.length}
                       onChange={handleSelectAll}
                     />
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Image
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Name
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Expired On
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Supplier
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row) => (
                   <TableRow key={row.srNo}>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <Checkbox
                         checked={selectedRows.includes(row.srNo)}
                         onChange={(event) =>
@@ -272,37 +300,36 @@ const ExpiredStocks = () => {
                         }
                       />
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <div className="blog-img">
                         <img src={ProductImage} alt="ProductImage" />
                       </div>
                     </TableCell>
-                    <TableCell align="center">{row.name}</TableCell>
-                    <TableCell align="center">{row.expdate}</TableCell>
-                    <TableCell align="center">{row.Supplier}</TableCell>
+                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.expdate}</TableCell>
+                    <TableCell align="left">{row.Supplier}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
-            </TableContainer>
-            {/* Table End */}
+          </TableContainer>
+          {/* Table End */}
 
-            {/* Pagination */}
-            <div>
-              <Pagination
-                count={pageCount}
-                page={page}
-                onChange={handlePageChange}
-                className="pagination-style"
-                style={{
-                  display: "flex",
-                  padding: "1rem",
-                  justifyContent: "right",
-                }}
-              />
-            </div>
-            {/* Pagination END */}
-
+          {/* Pagination */}
+          <div>
+            <Pagination
+              count={pageCount}
+              page={page}
+              onChange={handlePageChange}
+              className="pagination-style"
+              style={{
+                display: "flex",
+                padding: "1rem",
+                justifyContent: "right",
+              }}
+            />
+          </div>
+          {/* Pagination END */}
         </div>
       </div>
     </>

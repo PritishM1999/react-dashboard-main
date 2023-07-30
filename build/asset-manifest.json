@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/admin/static/css/main.6dc8fd8f.css",
+    "main.js": "/admin/static/js/main.af387855.js",
+    "static/js/313.13214edd.chunk.js": "/admin/static/js/313.13214edd.chunk.js",
+    "static/js/867.94d882f3.chunk.js": "/admin/static/js/867.94d882f3.chunk.js",
+    "static/js/27.301b03b1.chunk.js": "/admin/static/js/27.301b03b1.chunk.js",
+    "static/media/shopnmac-logo.png": "/admin/static/media/shopnmac-logo.ac7a5432544ab43e64b0.png",
+    "static/media/sample-product-bone.png": "/admin/static/media/sample-product-bone.7c11514c253184b3f8aa.png",
+    "static/media/user.jpg": "/admin/static/media/user.ed3f4cb9d4b48918d668.jpg",
+    "static/media/Banner4.jpg": "/admin/static/media/Banner4.4c17576f9c320cd95e1f.jpg",
+    "static/media/blog-sample.png": "/admin/static/media/blog-sample.fef8025b88b9bd131f44.png",
+    "index.html": "/admin/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.6dc8fd8f.css",
+    "static/js/main.af387855.js"
+  ]
+}

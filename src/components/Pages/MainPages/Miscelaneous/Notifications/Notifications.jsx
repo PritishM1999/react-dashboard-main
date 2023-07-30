@@ -13,6 +13,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import Pagination from "@mui/material/Pagination";
 import "./Notification.css";
 import InputAdornment from "@mui/material/InputAdornment";
+import HomeIcon from "@mui/icons-material/Home";
 
 function createData(message, date) {
   return { message, date };
@@ -166,6 +167,12 @@ const Notifications = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [page, setPage] = useState(1);
 
+
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
+
   const handleSearchChange = (event) => {
     setSearchText(event.target.value);
     setPage(1); // Reset page when search text changes
@@ -191,6 +198,24 @@ const Notifications = () => {
   };
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>Miscellaneous - Notifications</h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>&larr;</span> Back
+        </button>
+      </div>
+
+      <br />
       <div className="card">
         <div className="card-header">
           <h3 className="card-title">Notification</h3>
@@ -236,7 +261,7 @@ const Notifications = () => {
                     <TableCell style={{ fontWeight: "bold" }}>
                       Message
                     </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
+                    <TableCell style={{ fontWeight: "bold" }} align="left">
                       Date
                     </TableCell>
                   </TableRow>
@@ -250,7 +275,7 @@ const Notifications = () => {
                       <TableCell component="th" scope="row">
                         {row.message}
                       </TableCell>
-                      <TableCell align="center">{row.date}</TableCell>
+                      <TableCell align="left">{row.date}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

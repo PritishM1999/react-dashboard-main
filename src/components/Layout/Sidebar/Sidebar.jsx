@@ -18,25 +18,25 @@ import { FiUsers } from "react-icons/fi";
 
 const routes = [
   {
-    path: "/testDashboard",
+    path: "/admin/dashboard",
     name: "Dashboard",
     icon: <TbDashboard />,
   },
   {
-    path: "/testDashboard/miscellaneous",
+    path: "/admin/miscellaneous",
     name: "Miscellaneous",
     icon: <MdMiscellaneousServices />,
     subRoutes: [
       {
-        path: "/testDashboard/miscellaneous/notifications",
+        path: "/admin/miscellaneous/notifications",
         name: "Notifications",
       },
       {
-        path: "/testDashboard/miscellaneous/tasks",
+        path: "/admin/miscellaneous/tasks",
         name: "Tasks",
       },
       {
-        path: "/testDashboard/miscellaneous/blogs",
+        path: "/admin/miscellaneous/blogs",
         name: "Blogs",
       },
     ],
@@ -48,36 +48,36 @@ const routes = [
     icon: <TbCoins />,
     subRoutes: [
       {
-        path: "/testDashboard/sales/pos",
+        path: "/admin/sales/pos",
         name: "POS",
       },
       {
-        // path: "/testDashboard/miscellaneous/sales",
+        // path: "/admin/miscellaneous/sales",
         name: "Sales",
         subRoutes: [
           {
-            path: "/testDashboard/Sales/all-orders",
+            path: "/admin/Sales/all-orders",
             name: "All Orders",
           },
           {
-            path: "/testDashboard/Sales/subscription-orders",
+            path: "/admin/Sales/subscription-orders",
             name: "Subscription Orders",
           },
           {
-            path: "/testDashboard/Sales/pos-orders",
+            path: "/admin/Sales/pos-orders",
             name: "POS Orders",
           },
 
           {
-            path: "/testDashboard/Sales/pickup-orders",
+            path: "/admin/Sales/pickup-orders",
             name: "Pick up Point Orders",
           },
           {
-            path: "/testDashboard/Sales/back-orders",
+            path: "/admin/Sales/back-orders",
             name: "Back Orders",
           },
           {
-            path: "/testDashboard/Sales/Invoice-list",
+            path: "/admin/Sales/Invoice-list",
             name: "Invoice List",
           },
         ],
@@ -93,24 +93,24 @@ const routes = [
         name: "Inventory",
         subRoutes: [
           {
-            path: "/testDashboard/ProductManager/Inventory/product-inventory",
+            path: "/admin/ProductManager/Inventory/product-inventory",
             name: "Product Inventory",
           },
           {
-            path: "/testDashboard/ProductManager/Inventory/expiring-soon",
+            path: "/admin/ProductManager/Inventory/expiring-soon",
             name: "Expiring Soon",
           },
           {
-            path: "/testDashboard/ProductManager/Inventory/expired-stocks",
+            path: "/admin/ProductManager/Inventory/expired-stocks",
             name: "Expired Stock",
           },
           {
-            path: "/testDashboard/ProductManager/Inventory/stockout-products",
+            path: "/admin/ProductManager/Inventory/stockout-products",
             name: "Stockout Products",
           },
 
           {
-            path: "/testDashboard/ProductManager/Inventory/low-stock",
+            path: "/admin/ProductManager/Inventory/low-stock",
             name: "Low Stock",
           },
         ],
@@ -121,36 +121,36 @@ const routes = [
         name: "Products",
         subRoutes: [
           {
-            path: "/testDashboard/ProductManager/Products/add-products",
+            path: "/admin/ProductManager/Products/add-products",
             name: "Add Products",
           },
           {
-            path: "/testDashboard/ProductManager/Products/list-products",
+            path: "/admin/ProductManager/Products/list-products",
             name: "List of Products",
           },
           {
-            path: "/testDashboard/ProductManager/Products/categories",
+            path: "/admin/ProductManager/Products/categories",
             name: "Categories",
           },
 
           {
-            path: "/testDashboard/ProductManager/Products/brands",
+            path: "/admin/ProductManager/Products/brands",
             name: "Brands",
           },
           {
-            path: "/testDashboard/ProductManager/Products/units",
+            path: "/admin/ProductManager/Products/units",
             name: "Unit",
           },
           {
-            path: "/testDashboard/ProductManager/Products/suppliers-list",
+            path: "/admin/ProductManager/Products/suppliers-list",
             name: "Suppliers List",
           },
           {
-            path: "/testDashboard/ProductManager/Products/show-reviews",
+            path: "/admin/ProductManager/Products/show-reviews",
             name: "Product Reviews",
           },
           {
-            path: "/testDashboard/ProductManager/Products/set-alerts",
+            path: "/admin/ProductManager/Products/set-alerts",
             name: "Set Quantity Alerts",
           },
         ],
@@ -168,15 +168,15 @@ const routes = [
         name: "General Customers",
         subRoutes: [
           {
-            path: "/testDashboard/People/GeneralCustomers/add-customers",
+            path: "/admin/People/GeneralCustomers/add-customers",
             name: "Add Customer",
           },
           {
-            path: "/testDashboard/People/GeneralCustomers/all-customers",
+            path: "/admin/People/GeneralCustomers/all-customers",
             name: "All Customers",
           },
           {
-            path: "/testDashboard/People/GeneralCustomers/deleted-customers",
+            path: "/admin/People/GeneralCustomers/deleted-customers",
             name: "Deleted Customers",
           },
         ],
@@ -190,27 +190,27 @@ const routes = [
     exact: true,
     subRoutes: [
       {
-        path: "/testDashboard/Marketing-Promotions/product-wishlist",
+        path: "/admin/Marketing-Promotions/product-wishlist",
         name: "Product Wishlist",
       },
 
       {
-        path: "/testDashboard/Marketing-Promotions/all-subscribers",
+        path: "/admin/Marketing-Promotions/all-subscribers",
         name: "Subscribers",
       },
 
       {
-        path: "/testDashboard/Marketing-Promotions/periodic-discounts",
+        path: "/admin/Marketing-Promotions/periodic-discounts",
         name: "Discounts",
       },
 
       {
-        path: "/testDashboard/marketing-promotions/coupons",
+        path: "/admin/marketing-promotions/coupons",
         name: "Coupons",
       },
 
       {
-        path: "/testDashboard/Marketing-Promotions/subscription-discount",
+        path: "/admin/Marketing-Promotions/subscription-discount",
         name: "Subscription Discount",
       },
 
@@ -218,15 +218,15 @@ const routes = [
         name: "Marketing",
         subRoutes: [
           {
-            path: "/testDashboard/Marketing-Promotions/Marketing/user-searches",
+            path: "/admin/Marketing-Promotions/Marketing/user-searches",
             name: "User Searches",
           },
           {
-            path: "/testDashboard/Marketing-Promotions/Marketing/fail-orders",
+            path: "/admin/Marketing-Promotions/Marketing/fail-orders",
             name: "Failed Orders",
           },
           {
-            path: "/testDashboard/Marketing-Promotions/Marketing/on-cart",
+            path: "/admin/Marketing-Promotions/Marketing/on-cart",
             name: "On Cart",
           },
         ],
@@ -243,11 +243,11 @@ const routes = [
         name: "Employee",
         subRoutes: [
           {
-            path: "/testDashboard/Basic-HR/Employees/list-employees",
+            path: "/admin/Basic-HR/Employees/list-employees",
             name: "List of Employees",
           },
           {
-            path: "/testDashboard/Basic-HR/Employees/add-employees",
+            path: "/admin/Basic-HR/Employees/add-employees",
             name: "Add Employee",
           },
         ],
@@ -264,43 +264,43 @@ const routes = [
         name: "Sales Report",
         subRoutes: [
           {
-            path: "/testDashboard/Report/Sales-Report/all-sales",
+            path: "/admin/Report/Sales-Report/all-sales",
             name: "All Sales",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/user-report",
+            path: "/admin/Report/Sales-Report/user-report",
             name: "User Report",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/income-report",
+            path: "/admin/Report/Sales-Report/income-report",
             name: "Income Report",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/pos-report",
+            path: "/admin/Report/Sales-Report/pos-report",
             name: "POS - sales",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/product-wise-report",
+            path: "/admin/Report/Sales-Report/product-wise-report",
             name: "Product wise sales",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/back-order-report",
+            path: "/admin/Report/Sales-Report/back-order-report",
             name: "Back Order Report",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/subscription-report",
+            path: "/admin/Report/Sales-Report/subscription-report",
             name: "Subscription Report",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/payment-report",
+            path: "/admin/Report/Sales-Report/payment-report",
             name: "Payment Report",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/Employee-sales-report",
+            path: "/admin/Report/Sales-Report/Employee-sales-report",
             name: "Employee Sales Report",
           },
           {
-            path: "/testDashboard/Report/Sales-Report/wishlist-report",
+            path: "/admin/Report/Sales-Report/wishlist-report",
             name: "Wishlist Report",
           },
         ],
@@ -315,7 +315,7 @@ const routes = [
         name: "Setup",
         subRoutes: [
           {
-            path: "/testDashboard/Administrative/Setup/pick-up-point",
+            path: "/admin/Administrative/Setup/pick-up-point",
             name: "Pickup Point",
           },
           {
@@ -323,7 +323,7 @@ const routes = [
             hasSubRoutes: true,
             subRoutes: [
               {
-                path: "/testDashboard/Administrative/Setup/Shipping/shipping-config",
+                path: "/admin/Administrative/Setup/Shipping/shipping-config",
                 name: "Shipping Configuration",
               },
             ],
@@ -334,11 +334,11 @@ const routes = [
         name: "Settings",
         subRoutes: [
           {
-            path: "/testDashboard/Administrative/Settings/roles-permission",
+            path: "/admin/Administrative/Settings/roles-permission",
             name: "Roles & Permission",
           },
           {
-            path: "/testDashboard/Administrative/Settings/prefixes",
+            path: "/admin/Administrative/Settings/prefixes",
             name: "Prefixes",
           },
           {
@@ -346,11 +346,11 @@ const routes = [
             hasSubRoutes: true,
             subRoutes: [
               {
-                path: "/testDashboard/Administrative/Settings/account-settings/profile",
+                path: "/admin/Administrative/Settings/account-settings/profile",
                 name: "Profile",
               },
               {
-                path: "/testDashboard/Administrative/Settings/account-settings/profile/change-profile",
+                path: "/admin/Administrative/Settings/account-settings/profile/change-profile",
                 name: "Change Password",
               },
             ],
@@ -361,11 +361,11 @@ const routes = [
         name: "Website Setup",
         subRoutes: [
           {
-            path: "/testDashboard/Administrative/Website-Setup/sliders",
+            path: "/admin/Administrative/Website-Setup/sliders",
             name: "Sliders",
           },
           {
-            path: "/testDashboard/Administrative/Website-Setup/meta",
+            path: "/admin/Administrative/Website-Setup/meta",
             name: "Meta",
           },
         ],
@@ -374,15 +374,15 @@ const routes = [
         name: "Trash",
         subRoutes: [
           {
-            path: "/testDashboard/Administrative/Trash/deleted-orders",
+            path: "/admin/Administrative/Trash/deleted-orders",
             name: "Deleted Orders",
           },
           {
-            path: "/testDashboard/Administrative/Trash/deleted-products",
+            path: "/admin/Administrative/Trash/deleted-products",
             name: "Deleted Products",
           },
           {
-            path: "/testDashboard/Administrative/Trash/deleted-categories",
+            path: "/admin/Administrative/Trash/deleted-categories",
             name: "Deleted Categories",
           },
         ],

@@ -124,7 +124,7 @@ const RolesPermissions = () => {
         <div className="card-header">
           <h3 className="card-title">Roles</h3>
           <div className="copy-button">
-            <Link to="/testDashboard/Administrative/Settings/add-roles">
+            <Link to="/admin/Administrative/Settings/add-roles">
               <Button variant="contained">Add New</Button>
             </Link>
           </div>
@@ -173,27 +173,27 @@ const RolesPermissions = () => {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     <Checkbox
                       checked={selectedRows.length === displayedRows.length}
                       onChange={handleSelectAll}
                     />
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Role
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Description
                   </TableCell>
-                  <TableCell align="center" style={{ fontWeight: "bold" }}>
+                  <TableCell align="left" style={{ fontWeight: "bold" }}>
                     Action
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody align="center">
+              <TableBody align="left">
                 {displayedRows.map((row) => (
                   <TableRow key={row.srNo}>
-                    <TableCell align="center">
+                    <TableCell align="left">
                       <Checkbox
                         checked={selectedRows.includes(row.srNo)}
                         onChange={(event) =>
@@ -201,9 +201,9 @@ const RolesPermissions = () => {
                         }
                       />
                     </TableCell>
-                    <TableCell align="center">{row.name}</TableCell>
-                    <TableCell align="center">{row.Supplier}</TableCell>
-                    <TableCell align="center">
+                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.Supplier}</TableCell>
+                    <TableCell align="left">
                       <IconButton
                         onClick={(event) => handleMenuOpen(event, row.srNo)}
                         size="small"

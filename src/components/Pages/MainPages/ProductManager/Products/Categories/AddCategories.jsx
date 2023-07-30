@@ -8,12 +8,17 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import "./AddCategories.css"; // Import the CSS file for styling
+import "./AddCategories.css";
+import HomeIcon from "@mui/icons-material/Home";
 
 const AddCategories = () => {
   const [showUnitField, setShowUnitField] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     // Perform the upload logic here
@@ -30,6 +35,50 @@ const AddCategories = () => {
 
   return (
     <>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - Add Category
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - Add Category
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
       <div className="card-flow">
         <div className="card-header">
           <h3 className="card-title">Add Categories</h3>

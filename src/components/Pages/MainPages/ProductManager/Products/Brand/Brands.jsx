@@ -28,6 +28,7 @@ import {
   Menu,
   InputAdornment,
 } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
 
 const Brands = () => {
   function createData(
@@ -181,167 +182,199 @@ const Brands = () => {
     setPage(value);
   };
 
-  return (
-    <div className="card">
-      <div className="card-header">
-        <h3 className="card-title">Brands</h3>
-        {/* Buttons */}
-        <div className="tabs-butons">
-          <Button variant="contained">All</Button>
-          <Link to="/testDashboard/ProductManager/Products/add-brands">
-            <Button variant="contained">Add Brands</Button>
-          </Link>
-          <Button variant="contained">Trash</Button>
-        </div>
-        {/* Buttons End*/}
-      </div>
-      <div className="main-body2">
-        <div className="">
-          <div className="BrandsTable">
-            {/* Search and Nos */}
-            <div className="searchAndNosBrands">
-              <div className="nos">
-                Show <span className="spaces"></span>
-                <Select
-                  value={rowsPerPage}
-                  onChange={handleRowsPerPageChange}
-                  label="Rows per page"
-                >
-                  <MenuItem value={10}>10</MenuItem>
-                  <MenuItem value={25}>25</MenuItem>
-                  <MenuItem value={50}>50</MenuItem>
-                </Select>
-                <span className="spaces"></span> entries
-              </div>
-              <div className="search-in-table">
-                <OutlinedInput
-                  sx={{
-                    "& legend": { display: "none" },
-                    "& fieldset": { top: 0 },
-                  }}
-                  id="outlined-adornment-weight"
-                  onChange={handleSearchChange}
-                  value={searchText}
-                  endAdornment={
-                    <InputAdornment position="end">Search</InputAdornment>
-                  }
-                />
-              </div>
-            </div>
-            {/* Search and Nos END */}
+  const handleGoBack = () => {
+    // Go back to the previous page in the history
+    window.history.go(-1);
+  };
 
-            {/* Table */}
-            <TableContainer component={Paper} style={{ boxShadow: "gray" }}>
-              <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Sr.No.
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Added On
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Name
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Logo
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Banner
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Status
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Popular
-                    </TableCell>
-                    <TableCell style={{ fontWeight: "bold" }} align="center">
-                      Action
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {displayedRows.map((row, index) => (
-                    <TableRow
-                      key={index}
-                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                    >
-                      <TableCell component="th" scope="row" align="center">
-                        {row.srNo}
+  return (
+    <>
+      {" "}
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex" }}>
+          <i>
+            <HomeIcon /> {"-"}{" "}
+          </i>
+          <h6 style={{ margin: "5px" }}>
+            Product Manager - Products - All Brands
+          </h6>
+        </div>
+
+        <button
+          className="back-button"
+          onClick={handleGoBack}
+          style={{ background: "#EEF2F6", fontWeight: "500" }}
+        >
+          <span className="back-arrow" style={{ fontWeight: "500" }}>
+            &larr;
+          </span>{" "}
+          Back
+        </button>
+      </div>
+      <br />
+      <div className="card">
+        <div className="card-header">
+          <h3 className="card-title">Brands</h3>
+          {/* Buttons */}
+          <div className="tabs-butons">
+            <Button variant="contained">All</Button>
+            <Link to="/admin/ProductManager/Products/add-brands">
+              <Button variant="contained">Add Brands</Button>
+            </Link>
+            <Button variant="contained">Trash</Button>
+          </div>
+          {/* Buttons End*/}
+        </div>
+        <div className="main-body2">
+          <div className="">
+            <div className="BrandsTable">
+              {/* Search and Nos */}
+              <div className="searchAndNosBrands">
+                <div className="nos">
+                  Show <span className="spaces"></span>
+                  <Select
+                    value={rowsPerPage}
+                    onChange={handleRowsPerPageChange}
+                    label="Rows per page"
+                  >
+                    <MenuItem value={10}>10</MenuItem>
+                    <MenuItem value={25}>25</MenuItem>
+                    <MenuItem value={50}>50</MenuItem>
+                  </Select>
+                  <span className="spaces"></span> entries
+                </div>
+                <div className="search-in-table">
+                  <OutlinedInput
+                    sx={{
+                      "& legend": { display: "none" },
+                      "& fieldset": { top: 0 },
+                    }}
+                    id="outlined-adornment-weight"
+                    onChange={handleSearchChange}
+                    value={searchText}
+                    endAdornment={
+                      <InputAdornment position="end">Search</InputAdornment>
+                    }
+                  />
+                </div>
+              </div>
+              {/* Search and Nos END */}
+
+              {/* Table */}
+              <TableContainer component={Paper} style={{ boxShadow: "gray" }}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Sr.No.
                       </TableCell>
-                      <TableCell align="center">{row.title}</TableCell>
-                      <TableCell align="center">{row.category}</TableCell>
-                      <TableCell align="center">
-                        <div className="blog-img">
-                          <img src={BrandImage} alt="Blog" />
-                        </div>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Added On
                       </TableCell>
-                      <TableCell align="center">
-                        <div className="blog-img">
-                          <img src={BrandImage} alt="Blog" />
-                        </div>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Name
                       </TableCell>
-                      <TableCell align="center">
-                        <FormControlLabel
-                          control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
-                        />
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Logo
                       </TableCell>
-                      <TableCell align="center">
-                        <FormControlLabel
-                          control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
-                        />
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Banner
                       </TableCell>
-                      <TableCell align="center">
-                        <IconButton
-                          onClick={(event) => handleMenuOpen(event, row.srNo)}
-                          size="small"
-                        >
-                          <MoreVertOutlined />
-                        </IconButton>
-                        <Menu
-                          anchorEl={anchorEl}
-                          open={openMenuId === row.srNo}
-                          onClose={handleMenuClose}
-                          PaperProps={{
-                            style: {
-                              maxHeight: 120,
-                            },
-                          }}
-                        >
-                          <MenuItem onClick={handleMenuClose}>
-                            <EditOutlined sx={{ marginRight: 1 }} />
-                            Edit
-                          </MenuItem>
-                          <MenuItem onClick={handleMenuClose}>
-                            <DeleteOutlined sx={{ marginRight: 1 }} />
-                            Delete
-                          </MenuItem>
-                        </Menu>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Status
+                      </TableCell>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Popular
+                      </TableCell>
+                      <TableCell style={{ fontWeight: "bold" }} align="left">
+                        Action
                       </TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-            {/* Table END*/}
-            {/* Pagination */}
-            <Pagination
-              count={pageCount}
-              page={page}
-              onChange={handlePageChange}
-              className="pagination-style"
-              style={{
-                display: "flex",
-                padding: "1rem",
-                justifyContent: "right",
-              }}
-            />
-            {/* Pagination End*/}
+                  </TableHead>
+                  <TableBody>
+                    {displayedRows.map((row, index) => (
+                      <TableRow
+                        key={index}
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}
+                      >
+                        <TableCell component="th" scope="row" align="left">
+                          {row.srNo}
+                        </TableCell>
+                        <TableCell align="left">{row.title}</TableCell>
+                        <TableCell align="left">{row.category}</TableCell>
+                        <TableCell align="left">
+                          <div className="blog-img">
+                            <img src={BrandImage} alt="Blog" />
+                          </div>
+                        </TableCell>
+                        <TableCell align="left">
+                          <div className="blog-img">
+                            <img src={BrandImage} alt="Blog" />
+                          </div>
+                        </TableCell>
+                        <TableCell align="left">
+                          <FormControlLabel
+                            control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+                          />
+                        </TableCell>
+                        <TableCell align="left">
+                          <FormControlLabel
+                            control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+                          />
+                        </TableCell>
+                        <TableCell align="left">
+                          <IconButton
+                            onClick={(event) => handleMenuOpen(event, row.srNo)}
+                            size="small"
+                          >
+                            <MoreVertOutlined />
+                          </IconButton>
+                          <Menu
+                            anchorEl={anchorEl}
+                            open={openMenuId === row.srNo}
+                            onClose={handleMenuClose}
+                            PaperProps={{
+                              style: {
+                                maxHeight: 120,
+                              },
+                            }}
+                          >
+                            <MenuItem onClick={handleMenuClose}>
+                              <EditOutlined sx={{ marginRight: 1 }} />
+                              Edit
+                            </MenuItem>
+                            <MenuItem onClick={handleMenuClose}>
+                              <DeleteOutlined sx={{ marginRight: 1 }} />
+                              Delete
+                            </MenuItem>
+                          </Menu>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+              {/* Table END*/}
+              {/* Pagination */}
+              <Pagination
+                count={pageCount}
+                page={page}
+                onChange={handlePageChange}
+                className="pagination-style"
+                style={{
+                  display: "flex",
+                  padding: "1rem",
+                  justifyContent: "right",
+                }}
+              />
+              {/* Pagination End*/}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
